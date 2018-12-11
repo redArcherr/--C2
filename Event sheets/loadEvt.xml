@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>loadEvt</name>
+    <events>
+        <variable comment="排行榜接口" constant="0" name="rankUrl" sid="568241440710795" static="0" type="text">http://mgsk.besn.org.cn/h5game/server/sel_userinfo.php</variable>
+        <variable comment="openid" constant="0" name="userData" sid="130280879334595" static="0" type="text">oz9kquLpjsdfR9yqYqLtQeg|saber|http://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epL8F3Lhw3mw7kuFpqnwic9qJthNSTlmDxbicH2da19gs08w3pv5ys</variable>
+        <variable comment="服务器地址" constant="0" name="serverUrl" sid="669058714944474" static="0" type="text">http://mgsk.besn.org.cn/h5game/server/userinfo.php</variable>
+        <event-block sid="352971029679312">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="826940761625933" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="996547229461939" type="startbtn">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="503657489735896" type="yun">
+                    <param id="0" name="X">Self.startX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="587975581079682" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;eq&quot;</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="160043795853131" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;bgm&quot;</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="430224653722388" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;a_bgm&quot;</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="769854029662271" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;bc_bgm&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="758886334872373" type="System">
+                    <param id="0" name="Variable">userData</param>
+                    <param id="1" name="Value">Browser.QueryParam(&quot;openid&quot;)&amp;&quot;|&quot;&amp;Browser.QueryParam(&quot;nickName&quot;)&amp;&quot;|&quot;&amp;Browser.QueryParam(&quot;headimgurl&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="492840148446385">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="397833018389921" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="971309760568371" type="9patch">
+                    <param id="0" name="Width">loadingprogress*457</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825709758427045">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="678261252004815" type="System">
+                    <param id="0" name="First value">loadingprogress*100</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">98</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="593973049497057" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="173691583233635" type="startbtn" />
+                <action id="-9" name="Destroy" sid="373236309694155" type="9patch" />
+                <action id="-9" name="Destroy" sid="987534748532819" type="loaddb" />
+            </actions>
+        </event-block>
+        <event-block sid="480042535654067">
+            <conditions>
+                <condition id="17" name="On tap object" sid="479597158897271" type="TouchWrap">
+                    <param id="0" name="Object">startbtn</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="993984024302952" type="System">
+                    <param id="0" name="First value">loadingprogress*100</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">98</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Play (by name)" sid="986091610893888" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;bgm&quot;</param>
+                    <param id="3" name="Loop">1</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="724215321251982" type="startbtn">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="780323097026744" type="System">
+                    <param id="0" name="Seconds">0.05</param>
+                </action>
+                <action id="5" name="Set frame" sid="753386023358870" type="startbtn">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="378730677248261" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="458563807326870" type="System">
+                    <param id="0" name="Layout">game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="506446559510373">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="578490150203334" type="yun">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">Self.startX</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="156033991191384" type="yun">
+                    <param id="0" name="X">Self.endX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="658486610429550">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="288349448612583" type="yun">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">Self.endX</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="487847402060263" type="yun">
+                    <param id="0" name="X">Self.StartX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

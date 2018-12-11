@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">load</layout>
+        <layout order="2">game</layout>
+        <layout order="4">end</layout>
+        <layout order="6">res</layout>
+        <event-sheet order="1">loadEvt</event-sheet>
+        <event-sheet active="1" order="3">gameEvt</event-sheet>
+        <event-sheet order="5">endEvt</event-sheet>
+        <event-sheet order="7">fun</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="item" />
+        <family expanded="0" name="ctrlbtn" />
+        <family expanded="0" name="anim" />
+        <family expanded="0" name="statebtn" />
+        <family expanded="0" name="rank_sprite" />
+        <family expanded="0" name="rank_text" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="0" path="object-folder/" />
+        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/bg/" />
+        <folder expanded="1" path="animation-folder/cam/" />
+        <folder expanded="1" path="animation-folder/tooldb/" />
+        <folder expanded="1" path="animation-folder/buildbtn/" />
+        <folder expanded="1" path="animation-folder/builditem/" />
+        <folder expanded="1" path="animation-folder/bgImages/" />
+        <folder expanded="1" path="animation-folder/ground/" />
+        <folder expanded="1" path="animation-folder/updownbtn/" />
+        <folder expanded="1" path="animation-folder/surebtn/" />
+        <folder expanded="1" path="animation-folder/cancelbtn/" />
+        <folder expanded="1" path="animation-folder/btndb/" />
+        <folder expanded="1" path="animation-folder/sky/" />
+        <folder expanded="1" path="animation-folder/thunder/" />
+        <folder expanded="1" path="animation-folder/level/" />
+        <folder expanded="1" path="animation-folder/startbtn/" />
+        <folder expanded="1" path="animation-folder/loaddb/" />
+        <folder expanded="1" path="animation-folder/zn1/" />
+        <folder expanded="1" path="animation-folder/zn2/" />
+        <folder expanded="1" path="animation-folder/zn3/" />
+        <folder expanded="1" path="animation-folder/zn4/" />
+        <folder expanded="1" path="animation-folder/finishbtn/" />
+        <folder expanded="1" path="animation-folder/zn5/" />
+        <folder expanded="1" path="animation-folder/jb/" />
+        <folder expanded="1" path="animation-folder/tipsdb/" />
+        <folder expanded="1" path="animation-folder/tipsSs/" />
+        <folder expanded="1" path="animation-folder/tipsJt/" />
+        <folder expanded="1" path="animation-folder/againbtn/" />
+        <folder expanded="1" path="animation-folder/zn6/" />
+        <folder expanded="1" path="animation-folder/startbg/" />
+        <folder expanded="1" path="animation-folder/title/" />
+        <folder expanded="1" path="animation-folder/yun/" />
+        <folder expanded="1" path="animation-folder/endtitle/" />
+        <folder expanded="1" path="animation-folder/zn7/" />
+        <folder expanded="1" path="animation-folder/rankbtn/" />
+        <folder expanded="1" path="animation-folder/rankdb/" />
+        <folder expanded="1" path="animation-folder/ranktitle/" />
+        <folder expanded="1" path="animation-folder/rank_a_score/" />
+        <folder expanded="1" path="animation-folder/rank_a_db/" />
+        <folder expanded="1" path="animation-folder/jbui/" />
+        <folder expanded="1" path="animation-folder/rank_a_head/" />
+        <folder expanded="1" path="animation-folder/rank_m_db/" />
+        <folder expanded="1" path="animation-folder/rank_m_score/" />
+        <folder expanded="1" path="animation-folder/rank_m_head/" />
+        <folder expanded="1" path="animation-folder/rankheadzz/" />
+        <folder expanded="1" path="animation-folder/resRank_zz/" />
+        <folder expanded="1" path="animation-folder/resRank_head/" />
+        <folder expanded="1" path="animation-folder/resRank_score/" />
+        <folder expanded="1" path="animation-folder/rank_close/" />
+        <folder expanded="1" path="animation-folder/resRank_db/" />
+        <folder expanded="1" path="animation-folder/resRank_line/" />
+        <folder expanded="1" path="animation-folder/duanceng/" />
+    </folders-expanded>
+</c2uistate>

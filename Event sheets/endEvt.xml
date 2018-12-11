@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>endEvt</name>
+    <events>
+        <variable comment="头像地址" constant="0" name="headUrl" sid="977253587965010" static="0" type="text"></variable>
+        <variable comment="结束页状态机" constant="0" name="end_state" sid="805756650209095" static="0" type="text">end</variable>
+        <include>fun</include>
+        <event-block sid="395687122821704">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="186212223416410" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="992020053813449" type="rank_sprite">
+                    <param id="0" name="Pin to">rankdb</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="318922263645031" type="rank_text">
+                    <param id="0" name="Pin to">rankdb</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-33" name="Set layer parallax" sid="640867677139302" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Parallax X">0</param>
+                    <param id="2" name="Parallax Y">0</param>
+                </action>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="714154242244284" type="yun">
+                    <param id="0" name="X">Self.startX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+                <action id="0" name="Request URL" sid="458661678844004" type="AJAX">
+                    <param id="0" name="Tag">&quot;getRank&quot;</param>
+                    <param id="1" name="URL">rankUrl</param>
+                </action>
+                <action id="-9" name="Destroy" sid="818131498109759" type="ListControl" />
+            </actions>
+        </event-block>
+        <event-block sid="432291665584567">
+            <conditions>
+                <condition id="0" name="On completed" sid="333239094811236" type="AJAX">
+                    <param id="0" name="Tag">&quot;getRank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Load JSON" sid="182861298922702" type="JSON">
+                    <param id="0" name="JSON string">AJAX.LastData</param>
+                </action>
+                <action id="-3" name="Create object" sid="353884951610032" type="System">
+                    <param id="0" name="Object to create">ListControl</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">rankdb.ImagePointX(1)</param>
+                    <param id="3" name="Y">rankdb.ImagePointY(1)</param>
+                </action>
+                <action id="5" name="Set total lines count" sid="841547506464621" type="ListControl">
+                    <param id="0" name="Total lines count">int(JSON.AtKeys(&quot;count&quot;))-1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="359007105654653" type="ListControl">
+                    <param id="0" name="Pin to">rankdb</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="0" name="Call function" sid="430594449444842" type="Function">
+                    <param id="0" name="Name">&quot;setAandM&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825021902396741">
+            <conditions>
+                <condition id="17" name="On tap object" sid="998960654050709" type="TouchWrap">
+                    <param id="0" name="Object">againbtn</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="520803894817833" type="System">
+                    <param id="0" name="Variable">end_state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;end&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="846923169607404" type="System">
+                    <param id="0" name="Layout">game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="682309533443955">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="734047657234448" type="yun">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">Self.startX</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="429644996647854" type="yun">
+                    <param id="0" name="X">Self.endX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="740888614857881">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="601202369097682" type="yun">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">Self.endX</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="525700908540675" type="yun">
+                    <param id="0" name="X">Self.StartX</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="921897614844537">
+            <conditions>
+                <condition id="17" name="On tap object" sid="654956015098639" type="TouchWrap">
+                    <param id="0" name="Object">rankbtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="532720286566039" type="System">
+                    <param id="0" name="Variable">end_state</param>
+                    <param id="1" name="Value">&quot;rankShow&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="873883404786293" type="rankdb">
+                    <param id="0" name="X">320</param>
+                    <param id="1" name="Y">500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="254403302757503">
+            <conditions>
+                <condition id="17" name="On tap object" sid="137473068886991" type="TouchWrap">
+                    <param id="0" name="Object">rank_close</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="406003105871789" type="rankdb">
+                    <param id="0" name="X">-1064</param>
+                    <param id="1" name="Y">-258</param>
+                </action>
+                <action id="-16" name="Wait" sid="606872449161948" type="System">
+                    <param id="0" name="Seconds">0.03</param>
+                </action>
+                <action id="-9" name="Set value" sid="154561438319209" type="System">
+                    <param id="0" name="Variable">end_state</param>
+                    <param id="1" name="Value">&quot;end&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878977141371137">
+            <conditions>
+                <condition id="1" name="On line visible" sid="335051343562126" type="ListControl" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="117611783437977" type="System">
+                    <param id="0" name="Object to create">resRank_db</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">ListControl.LineTLX</param>
+                    <param id="3" name="Y">ListControl.LineTLY</param>
+                </action>
+                <action id="3" name="Pin instance" sid="629567857151187" type="ListControl">
+                    <param id="0" name="Instance">resRank_db</param>
+                </action>
+                <action id="-3" name="Create object" sid="335210517741505" type="System">
+                    <param id="0" name="Object to create">resRank_head</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">resRank_db.ImagePointX(&quot;head&quot;)</param>
+                    <param id="3" name="Y">resRank_db.ImagePointY(&quot;head&quot;)</param>
+                </action>
+                <action id="5" name="Set frame" sid="657553171213852" type="resRank_head">
+                    <param id="0" name="Frame number">ListControl.LineIndex</param>
+                </action>
+                <action id="10" name="Load image from URL" sid="911489542933620" type="resRank_head">
+                    <param id="0" name="URI">JSON.AtKeys(&quot;data&quot;,ListControl.LineIndex+1,&quot;headimgurl&quot;)</param>
+                    <param id="1" name="Size">1</param>
+                    <param id="2" name="Cross-origin">0</param>
+                </action>
+                <action id="3" name="Pin instance" sid="579028617152907" type="ListControl">
+                    <param id="0" name="Instance">resRank_head</param>
+                </action>
+                <action id="-3" name="Create object" sid="938007335906726" type="System">
+                    <param id="0" name="Object to create">resRank_zz</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">resRank_db.ImagePointX(&quot;head&quot;)</param>
+                    <param id="3" name="Y">resRank_db.ImagePointY(&quot;head&quot;)</param>
+                </action>
+                <action id="3" name="Pin instance" sid="261308356715599" type="ListControl">
+                    <param id="0" name="Instance">resRank_zz</param>
+                </action>
+                <action id="-3" name="Create object" sid="861126985832372" type="System">
+                    <param id="0" name="Object to create">resRank_name</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">resRank_db.ImagePointX(&quot;name&quot;)</param>
+                    <param id="3" name="Y">resRank_db.ImagePointY(&quot;name&quot;)-15</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="496408954161093" type="resRank_name">
+                    <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,ListControl.LineIndex+1,&quot;nickname&quot;)</param>
+                </action>
+                <action id="3" name="Pin instance" sid="266050905522855" type="ListControl">
+                    <param id="0" name="Instance">resRank_name</param>
+                </action>
+                <action id="-3" name="Create object" sid="698618730260276" type="System">
+                    <param id="0" name="Object to create">resRank_line</param>
+                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                    <param id="2" name="X">resRank_db.X</param>
+                    <param id="3" name="Y">resRank_db.Y+resRank_db.Height</param>
+                </action>
+                <action id="3" name="Pin instance" sid="396204014840206" type="ListControl">
+                    <param id="0" name="Instance">resRank_line</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="596090483453152">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="441687412557813" type="System">
+                            <param id="0" name="First value">ListControl.CurLineIndex</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="312147114983869" type="System">
+                            <param id="0" name="Object to create">resRank_score</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">resRank_db.ImagePointX(&quot;score&quot;)</param>
+                            <param id="3" name="Y">resRank_db.ImagePointY(&quot;score&quot;)</param>
+                        </action>
+                        <action id="3" name="Pin instance" sid="643258037033711" type="ListControl">
+                            <param id="0" name="Instance">resRank_score</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="762356096761160" type="resRank_score">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="837311203494637" type="resRank_name">
+                            <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,ListControl.LineIndex+1,&quot;nickname&quot;)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="848900754837801" type="resRank_name">
+                            <param id="0" name="Y">Self.Y-10</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="593751191651742" type="System">
+                            <param id="0" name="Object to create">resRank_ch</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">resRank_db.ImagePointX(&quot;name&quot;)</param>
+                            <param id="3" name="Y">resRank_db.ImagePointY(&quot;name&quot;)+20</param>
+                        </action>
+                        <action id="0" name="Set text" sid="600085209264285" type="resRank_ch">
+                            <param id="0" name="Text">&quot;城市高手&quot;</param>
+                        </action>
+                        <action id="3" name="Pin instance" sid="835762479368623" type="ListControl">
+                            <param id="0" name="Instance">resRank_ch</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="871197391558595">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="667665995430483" type="System">
+                            <param id="0" name="First value">ListControl.CurLineIndex</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="505527031893445" type="System">
+                            <param id="0" name="Object to create">resRank_score</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">resRank_db.ImagePointX(&quot;score&quot;)</param>
+                            <param id="3" name="Y">resRank_db.ImagePointY(&quot;score&quot;)</param>
+                        </action>
+                        <action id="3" name="Pin instance" sid="687497542608043" type="ListControl">
+                            <param id="0" name="Instance">resRank_score</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="579432446878441" type="resRank_score">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="685646109802921" type="resRank_name">
+                            <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,ListControl.LineIndex+1,&quot;nickname&quot;)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="812163015405582" type="resRank_name">
+                            <param id="0" name="Y">Self.Y-10</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="874179737304360" type="System">
+                            <param id="0" name="Object to create">resRank_ch</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">resRank_db.ImagePointX(&quot;name&quot;)</param>
+                            <param id="3" name="Y">resRank_db.ImagePointY(&quot;name&quot;)+20</param>
+                        </action>
+                        <action id="0" name="Set text" sid="315580975477584" type="resRank_ch">
+                            <param id="0" name="Text">&quot;城市新手&quot;</param>
+                        </action>
+                        <action id="3" name="Pin instance" sid="835087334195031" type="ListControl">
+                            <param id="0" name="Instance">resRank_ch</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="620629316312321">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="182194151020424" type="System">
+                            <param id="0" name="First value">ListControl.CurLineIndex</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="563565779350203" type="System">
+                            <param id="0" name="Object to create">resRank_numb</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">resRank_db.ImagePointX(&quot;score&quot;)</param>
+                            <param id="3" name="Y">resRank_db.ImagePointY(&quot;score&quot;)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="127323492849055" type="resRank_numb">
+                            <param id="0" name="Text">ListControl.LineIndex+2</param>
+                        </action>
+                        <action id="3" name="Pin instance" sid="288496005937609" type="ListControl">
+                            <param id="0" name="Instance">resRank_numb</param>
+                        </action>
+                        <action id="0" name="Set text" sid="924446449446120" type="resRank_name">
+                            <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,ListControl.LineIndex+1,&quot;nickname&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="629078492535785">
+            <conditions>
+                <condition behavior="TouchArea" id="3" name="On touch moving" sid="812031426029748" type="ListControl" />
+            </conditions>
+            <actions>
+                <action id="2" name="Add to" sid="240591752480710" type="ListControl">
+                    <param id="0" name="Value">ListControl.TouchArea.DeltaY</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="982212004133395">
+            <conditions>
+                <condition id="0" name="On function" sid="450472443186968" type="Function">
+                    <param id="0" name="Name">&quot;setAandM&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="162512415160314">
+                    <conditions />
+                    <actions>
+                        <action id="10" name="Load image from URL" sid="632413218791129" type="rank_a_head">
+                            <param id="0" name="URI">JSON.AtKeys(&quot;data&quot;,0,&quot;headimgurl&quot;)</param>
+                            <param id="1" name="Size">1</param>
+                            <param id="2" name="Cross-origin">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="343343810054877" type="rank_a_name">
+                            <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,0,&quot;nickname&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="576013482081974">
+                    <conditions>
+                        <condition id="-10" name="For" sid="219984888317558" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">int(JSON.AtKeys(&quot;count&quot;))</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="191291821481783">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="321478376812755" type="System">
+                                    <param id="0" name="First value">JSON.AtKeys(&quot;data&quot;,loopindex,&quot;openid&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">tokenat(userData,0,&quot;|&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Load image from URL" sid="970290874188790" type="rank_m_head">
+                                    <param id="0" name="URI">JSON.AtKeys(&quot;data&quot;,loopindex,&quot;headimgurl&quot;)</param>
+                                    <param id="1" name="Size">1</param>
+                                    <param id="2" name="Cross-origin">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="903937839049580" type="rank_m_name">
+                                    <param id="0" name="Text">JSON.AtKeys(&quot;data&quot;,loopindex,&quot;nickname&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="152486641648301">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="357643396452406" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="857128286229300" type="rank_m_score">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="557765620173086">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="162775667851167" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="174514564826458" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="238479260414138" type="rank_m_score">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="385596411967755">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="247804710821648" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="298824688533549" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="823442283113569" type="rank_m_score">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="431442712839075">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="677038751966700" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="999566655926524" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="482279130138309" type="rank_m_score">
+                                            <param id="0" name="Object">resRank_numb</param>
+                                            <param id="1" name="Layer">&quot;ui&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="364184750610396" type="resRank_numb">
+                                            <param id="0" name="Text">loopindex</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="992204102818927" type="rank_m_score" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

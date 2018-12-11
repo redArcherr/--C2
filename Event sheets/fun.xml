@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>fun</name>
+    <events>
+        <comment>游戏初始化</comment>
+        <event-block sid="826619542787645">
+            <conditions>
+                <condition id="0" name="On function" sid="369309809593416" type="Function">
+                    <param id="0" name="Name">&quot;gameIni&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="951256952185046" type="Function">
+                    <param id="0" name="Name">&quot;itemData&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="304945540988127">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="322002048615808" type="System">
+                            <param id="0" name="Variable">isDrapBuildItem</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="978027061840104" type="System">
+                            <param id="0" name="Layer">&quot;anim&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="442458031792531" type="System">
+                            <param id="0" name="Layer">&quot;tool&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="198679993729664" type="buildbtn" />
+                        <action id="-9" name="Destroy" sid="171488760509870" type="buildname" />
+                        <action id="-9" name="Destroy" sid="590370200134317" type="ground" />
+                        <action id="-5" name="Set width" sid="764825529605049" type="tooldb">
+                            <param id="0" name="Width">189</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="972542787807354" type="bg">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">Self.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="418028023493123" type="cam">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Boundary" id="5" name="Set horizontal boundary" sid="898970161783253" type="cam">
+                            <param id="0" name="Left">bg.BBoxLeft</param>
+                            <param id="1" name="Right">bg.BBoxRight</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="497379419493028" type="bgImages">
+                            <param id="0" name="Pin to">bg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="543751370702621" type="ctrlbtn">
+                            <param id="0" name="Pin to">btndb</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="229801045382745" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Value">&quot;open&quot;</param>
+                        </action>
+                        <action id="101" name="Create global camera" sid="291846309967795" type="MagiCam">
+                            <param id="0" name="Name">&quot;shake&quot;</param>
+                            <param id="1" name="X">0</param>
+                            <param id="2" name="Y">0</param>
+                            <param id="3" name="Scale">1</param>
+                            <param id="4" name="Active">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="919629842562421" type="anim">
+                            <param id="0" name="Pin to">bg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="387218396334505" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="821885159150185" type="finishbtn">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="879801236147553" type="updownbtn">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="165175883507754" type="duanceng">
+                            <param id="0" name="Pin to">bg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="330461346759053" type="duanceng">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>创建ui</comment>
+                <event-block sid="193175077971900">
+                    <conditions>
+                        <condition id="-10" name="For" sid="839669083330222" type="System">
+                            <param id="0" name="Name">&quot;x&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">buildbtn.AnimationFrameCount-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="270137571242251" type="System">
+                            <param id="0" name="Object to create">buildbtn</param>
+                            <param id="1" name="Layer">&quot;tool&quot;</param>
+                            <param id="2" name="X">(tooldb.X+10)+loopindex(&quot;x&quot;)*200</param>
+                            <param id="3" name="Y">tooldb.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="252391823321545" type="System">
+                            <param id="0" name="Object to create">buildname</param>
+                            <param id="1" name="Layer">&quot;tool&quot;</param>
+                            <param id="2" name="X">buildbtn.X</param>
+                            <param id="3" name="Y">tooldb.Y+tooldb.Height-buildname.Height</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="442211899864347" type="buildbtn">
+                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="547418365185003" type="buildbtn">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">loopindex(&quot;x&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="902905411896213" type="buildbtn">
+                            <param id="0" name="Instance variable">name</param>
+                            <param id="1" name="Value">tokenat(Dictionary.Get(&quot;i&quot;&amp;loopindex(&quot;x&quot;)),0,&quot;|&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="955528117709944" type="buildbtn">
+                            <param id="0" name="Instance variable">score</param>
+                            <param id="1" name="Value">int(tokenat(Dictionary.Get(&quot;i&quot;&amp;loopindex(&quot;x&quot;)),1,&quot;|&quot;))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="722261088746348" type="buildbtn">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Value">&quot;yes&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="156458744955543" type="buildname">
+                            <param id="0" name="Text">buildbtn.name</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="374086097363911" type="buildbtn">
+                            <param id="0" name="Frame number">loopindex(&quot;x&quot;)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="739714279827103" type="buildbtn">
+                            <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="554986671984021" type="tooldb">
+                            <param id="0" name="Width">Self.Width+buildbtn.Width+30</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="302729253388641" type="buildbtn">
+                            <param id="0" name="Pin to">tooldb</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="460026758040328" type="buildname">
+                            <param id="0" name="Pin to">tooldb</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>创建土地ui</comment>
+                <event-block sid="982090073231566">
+                    <conditions>
+                        <condition id="-10" name="For" sid="774839373905202" type="System">
+                            <param id="0" name="Name">&quot;y&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">bg.ImagePointCount-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="161638780007196" type="System">
+                            <param id="0" name="Object to create">ground</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">bg.ImagePointX(&quot;g&quot;&amp;loopindex(&quot;y&quot;))</param>
+                            <param id="3" name="Y">bg.ImagePointY(&quot;g&quot;&amp;loopindex(&quot;y&quot;))</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="351546796160311" type="ground">
+                            <param id="0" name="Pin to">bg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="878301994223559" type="ground">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">loopindex(&quot;y&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="967584224699150">
+            <conditions>
+                <condition id="0" name="On function" sid="932269773195310" type="Function">
+                    <param id="0" name="Name">&quot;tipsIni&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="329820129904907">
+                    <conditions />
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="968658895116524" type="jbTxt">
+                            <param id="0" name="Pin to">tipsdb</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="983740492599391" type="jb">
+                            <param id="0" name="X">Self.startX</param>
+                            <param id="1" name="Y">Self.startY</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="686146466982708" type="tipsdb">
+                            <param id="0" name="X">381</param>
+                            <param id="1" name="Y">-592</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="899370395748308" type="tipsSs">
+                            <param id="0" name="X">1073</param>
+                            <param id="1" name="Y">-743</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="905625958260519" type="tipsJt">
+                            <param id="0" name="X">1073</param>
+                            <param id="1" name="Y">-743</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="156400606791482" type="tipsJt">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="387534738337658">
+            <conditions>
+                <condition id="3" name="On touched object" sid="365127788488640" type="TouchWrap">
+                    <param id="0" name="Object">item</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="932856108833160" type="item">
+                    <param id="0" name="Scale">0.6</param>
+                </action>
+                <action id="-16" name="Wait" sid="455261272437688" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="9" name="Set scale" sid="621647188683035" type="item">
+                    <param id="0" name="Scale">0.7</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>确定\取消按钮</comment>
+        <event-block sid="586598338867297">
+            <conditions>
+                <condition id="0" name="On function" sid="534370513217386" type="Function">
+                    <param id="0" name="Name">&quot;btndb&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="872384786357042">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="866043913334274" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;show&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="972829934721164" type="btndb">
+                            <param id="0" name="X">Function.Param(1)</param>
+                            <param id="1" name="Y">Function.Param(2)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="870058294798360" type="btndb">
+                            <param id="0" name="Pin to">bg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="510565086045381" type="System">
+                            <param id="0" name="Variable">isDrapBuildItem</param>
+                            <param id="1" name="Value">&quot;false&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="315780636214984">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="156261844641344" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;hidden&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="1" name="Unpin" sid="947306114736530" type="btndb" />
+                        <action id="-3" name="Set position" sid="455881548593829" type="btndb">
+                            <param id="0" name="X">-27</param>
+                            <param id="1" name="Y">-447</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="694140944413554" type="System">
+                            <param id="0" name="Variable">isDrapBuildItem</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="584136212716442">
+            <conditions>
+                <condition id="0" name="On function" sid="955540162372758" type="Function">
+                    <param id="0" name="Name">&quot;tips&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="259256651035672" type="System">
+                    <param id="0" name="Object to create">tipsTxt</param>
+                    <param id="1" name="Layer">&quot;tips&quot;</param>
+                    <param id="2" name="X">320</param>
+                    <param id="3" name="Y">198</param>
+                </action>
+                <action id="0" name="Set text" sid="762058616630948" type="tipsTxt">
+                    <param id="0" name="Text">Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>数据字典</comment>
+        <event-block sid="801966873079889">
+            <conditions>
+                <condition id="0" name="On function" sid="542803053878252" type="Function">
+                    <param id="0" name="Name">&quot;itemData&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="650610034406125">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Add key" sid="323306194024473" type="Dictionary">
+                            <param id="0" name="Key">&quot;i0&quot;</param>
+                            <param id="1" name="Value">&quot;办公区|0&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="488479695819592" type="Dictionary">
+                            <param id="0" name="Key">&quot;i1&quot;</param>
+                            <param id="1" name="Value">&quot;办公区1|1&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="668531653511627" type="Dictionary">
+                            <param id="0" name="Key">&quot;i2&quot;</param>
+                            <param id="1" name="Value">&quot;便利店|2&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="768434254643820" type="Dictionary">
+                            <param id="0" name="Key">&quot;i3&quot;</param>
+                            <param id="1" name="Value">&quot;别墅区|3&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="427640269761621" type="Dictionary">
+                            <param id="0" name="Key">&quot;i4&quot;</param>
+                            <param id="1" name="Value">&quot;别墅区1|4&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="306628062246304" type="Dictionary">
+                            <param id="0" name="Key">&quot;i5&quot;</param>
+                            <param id="1" name="Value">&quot;车站|5&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="584314124372875" type="Dictionary">
+                            <param id="0" name="Key">&quot;i6&quot;</param>
+                            <param id="1" name="Value">&quot;挡水墙|6&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="761435834946962" type="Dictionary">
+                            <param id="0" name="Key">&quot;i7&quot;</param>
+                            <param id="1" name="Value">&quot;防固坡|7&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="419749978517800" type="Dictionary">
+                            <param id="0" name="Key">&quot;i8&quot;</param>
+                            <param id="1" name="Value">&quot;防护坡|8&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="424494883651545" type="Dictionary">
+                            <param id="0" name="Key">&quot;i9&quot;</param>
+                            <param id="1" name="Value">&quot;工厂|9&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="243000411262369" type="Dictionary">
+                            <param id="0" name="Key">&quot;i10&quot;</param>
+                            <param id="1" name="Value">&quot;公园|10&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="882935155826587" type="Dictionary">
+                            <param id="0" name="Key">&quot;i11&quot;</param>
+                            <param id="1" name="Value">&quot;加油站|11&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="666651932883691" type="Dictionary">
+                            <param id="0" name="Key">&quot;i12&quot;</param>
+                            <param id="1" name="Value">&quot;监测局|12&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="114392457398280" type="Dictionary">
+                            <param id="0" name="Key">&quot;i13&quot;</param>
+                            <param id="1" name="Value">&quot;居民区|13&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="502653255859635" type="Dictionary">
+                            <param id="0" name="Key">&quot;i14&quot;</param>
+                            <param id="1" name="Value">&quot;居民区1|14&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="592386888871411" type="Dictionary">
+                            <param id="0" name="Key">&quot;i15&quot;</param>
+                            <param id="1" name="Value">&quot;美术馆|15&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="360557445575048" type="Dictionary">
+                            <param id="0" name="Key">&quot;i16&quot;</param>
+                            <param id="1" name="Value">&quot;商业区|16&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="261505424007246" type="Dictionary">
+                            <param id="0" name="Key">&quot;i17&quot;</param>
+                            <param id="1" name="Value">&quot;商业区2|17&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="504540503570338" type="Dictionary">
+                            <param id="0" name="Key">&quot;i18&quot;</param>
+                            <param id="1" name="Value">&quot;学校|18&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="915757460553524" type="Dictionary">
+                            <param id="0" name="Key">&quot;i19&quot;</param>
+                            <param id="1" name="Value">&quot;医院|19&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="294944609807857" type="Dictionary">
+                            <param id="0" name="Key">&quot;i20&quot;</param>
+                            <param id="1" name="Value">&quot;政务楼|20&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="254311397668930" type="Dictionary">
+                            <param id="0" name="Key">&quot;i21&quot;</param>
+                            <param id="1" name="Value">&quot;住宅区|21&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="809445215013070" type="Dictionary">
+                            <param id="0" name="Key">&quot;i22&quot;</param>
+                            <param id="1" name="Value">&quot;堤坝|22&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="634061397241726" type="Dictionary">
+                            <param id="0" name="Key">&quot;i23&quot;</param>
+                            <param id="1" name="Value">&quot;经抗震加固的老旧房屋|23&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="511549251780415" type="Dictionary">
+                            <param id="0" name="Key">&quot;i24&quot;</param>
+                            <param id="1" name="Value">&quot;地震断层避让牌|24&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="背景和工具栏的滚动逻辑" sid="662690542573610" title="background and tol0db Scroll">
+            <sub-events>
+                <comment>background scroll</comment>
+                <event-block sid="163145738787325">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="935087185600312" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="915077774768486" type="bg">
+                            <param id="0" name="X">lerp(bg.X,cam.X,0.1)</param>
+                            <param id="1" name="Y">Self.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="626104141265845">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="249124889640364" type="cam">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">-boundaryNum</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="379952361822388" type="cam">
+                            <param id="0" name="X">-boundaryNum</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="281703771003146">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="915563907201021" type="cam">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-1434+620</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="332978376264436" type="cam">
+                            <param id="0" name="X">-1434+620</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="382877869104532">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="551696361559734" type="cam">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-(bg.Width-WindowWidth-1)+boundaryNum</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="479791063132097" type="cam">
+                            <param id="0" name="X">-(bg.Width-WindowWidth)+boundaryNum+35</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="934476804194191">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="768146509823497" type="cam">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">-(bg.Height-WindowHeight)+boundaryNum+50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="783361691080261" type="cam">
+                            <param id="0" name="Y">-(bg.Height-WindowHeight)+boundaryNum+50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="563210131678838">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="362257479465892" type="cam">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">-boundaryNum</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="512715023482987" type="cam">
+                            <param id="0" name="Y">-boundaryNum</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>toll scroll</comment>
+                <event-block sid="753415885753783">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="115745505878673" type="updownbtn">
+                            <param id="0" name="Instance variable">updown</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="952489663646656">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="213715531244626" type="tooldb">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="669681681746412" type="tooldb">
+                                    <param id="0" name="X">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="858095898668188">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="998972332693544" type="tooldb">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">640-tooldb.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="720201708698165" type="tooldb">
+                                    <param id="0" name="X">640-tooldb.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

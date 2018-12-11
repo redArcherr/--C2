@@ -1,0 +1,1907 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>韧性城市</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>红A</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2rq8y1ia3k5vs</unique-id>
+    <saved-with-version>26000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Chris Hackmann (aka linkman2004)" id="MagiCam" version="6.5">MagiCam</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Hash" version="0.5">JSON</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_ListCtrl" version="0.100000001">List control</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Rex.Rainbow" id="rex_TouchWrap" version="0.100000001">Touch wrap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_TouchArea2" version="0.100000001">Touch area</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_TouchDirection2" version="1">Dragging vetctor</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_boundary" version="1">Boundary</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_text_typing" version="1">Typing</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Yeremia AI (lunarray)" id="lunarray_Tween" version="1.600000024">EaseTween</behavior>
+        <behavior author="Rex.Rainbow" id="rex_Anchor_mod" version="1">Anchor mod</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="grayscale">Grayscale</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>1044</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>load</first-layout>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Nothing (not recommended)</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="bg" sid="460135246756375">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594017968560796" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\D盘\工作\BJ\地震\地震H5\XIUGAI\统一\空地-01副本.png">
+                        <image-point name="g0" x="0.136681" y="0.438182" />
+                        <image-point name="g1" x="0.209205" y="0.382727" />
+                        <image-point name="g2" x="0.331939" y="0.334545" />
+                        <image-point name="g3" x="0.421199" y="0.264545" />
+                        <image-point name="g4" x="0.135286" y="0.562727" />
+                        <image-point name="g5" x="0.214086" y="0.501818" />
+                        <image-point name="g6" x="0.293584" y="0.442727" />
+                        <image-point name="g7" x="0.391911" y="0.381818" />
+                        <image-point name="g8" x="0.503487" y="0.324545" />
+                        <image-point name="g9" x="0.465133" y="0.437273" />
+                        <image-point name="g10" x="0.566946" y="0.37" />
+                        <image-point name="g11" x="0.562761" y="0.908182" />
+                        <image-point name="g12" x="0.43166" y="0.696364" />
+                        <image-point name="g13" x="0.51325" y="0.638182" />
+                        <image-point name="g14" x="0.612971" y="0.552727" />
+                        <image-point name="g15" x="0.691771" y="0.469091" />
+                        <image-point name="g16" x="0.693863" y="0.908182" />
+                        <image-point name="g17" x="0.492329" y="0.741818" />
+                        <image-point name="g18" x="0.573222" y="0.68" />
+                        <image-point name="g19" x="0.692469" y="0.61" />
+                        <image-point name="g20" x="0.723152" y="0.908182" />
+                        <image-point name="g21" x="0.759414" y="0.515455" />
+                        <image-point name="g22" x="0.552999" y="0.788182" />
+                        <image-point name="g23" x="0.631102" y="0.722727" />
+                        <image-point name="g24" x="0.752441" y="0.655455" />
+                        <image-point name="g25" x="0.820084" y="0.558182" />
+                        <image-point name="g26" x="0.812413" y="0.696364" />
+                        <image-point name="g27" x="0.883543" y="0.602727" />
+                        <image-point name="g28" x="0.0864714" y="0.16" />
+                        <image-point name="g29" x="0.859135" y="0.377273" />
+                        <image-point name="g30" x="0.44212" y="0.543636" />
+                        <image-point name="g31" x="0.188285" y="0.77" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="cam" sid="374706761204297">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Boundary" sid="611585340803618">
+                    <behavior id="Rex_boundary" />
+                </behavior-type>
+                <behavior-type name="DraggingVetctor" sid="897592766069470">
+                    <behavior id="Rex_TouchDirection2" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="905366578180039" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="662273491442843">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="TouchWrap" sid="778944101425206">
+            <plugin id="rex_TouchWrap" />
+        </object-type>
+        <object-type name="tooldb" sid="968321264822106">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="633559148559067">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+                <behavior-type name="Anchor" sid="191549007451243">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="149994012802591" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buildbtn" sid="649588291972216">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="671771099998610" type="number" />
+                <instance-variable name="name" sid="589701110454578" type="string" />
+                <instance-variable comment="可用/不可用" name="state" sid="249756946291372" type="string" />
+                <instance-variable name="score" sid="261830394540910" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="234601950457848">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="941403469726055">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="25" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="289917601485722" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\办公区2.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\办公区3.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\便利店.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\别墅区.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\别墅区2.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\车站.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\挡水墙.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\防固坡.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\防护坡.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\工厂.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\公园.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\加油站.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\监测局.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\居民区2.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\居民区3.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\美术馆.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\商业区.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\商业区2.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\学校.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\医院.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\政务楼.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\住宅区.png">
+                        <image-point name="span" x="0.5" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\城市\提坝.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\经抗震加固的老旧房屋.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\地震断层避让牌.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="builditem" sid="805818715346351">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="build" sid="954065320825389" type="string" />
+                <instance-variable name="id" sid="700413617464967" type="number" />
+                <instance-variable name="name" sid="940977025487791" type="string" />
+                <instance-variable name="score" sid="541643301713415" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="637796806697129">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="b0" pingpong="0" repeatcount="1" repeatto="0" sid="609811767992905" speed="0">
+                    <frame duration="1" hotspotX="0.56044" hotspotY="0.566474" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\办公区.png">
+                        <collision-poly>
+                            <point x="0.115385" y="0.710319" />
+                            <point x="0.529215" y="0.394106" />
+                            <point x="0.906593" y="0.674594" />
+                            <point x="0.54409" y="0.965318" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.558659" hotspotY="0.563953" original-source="D:\工作\bj\地震\地震H5\城市\震后\办公区震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.797024" />
+                            <point x="0.529215" y="0.249597" />
+                            <point x="1" y="0.703496" />
+                            <point x="0.549585" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b1" pingpong="0" repeatcount="1" repeatto="0" sid="692538044071490" speed="0">
+                    <frame duration="1" hotspotX="0.508333" hotspotY="0.570423" original-source="C:\Users\surfacepro\Desktop\城市\办公区2.png">
+                        <collision-poly>
+                            <point x="0.509887" y="0.302191" />
+                            <point x="1" y="0.76832" />
+                            <point x="0.865719" y="1" />
+                            <point x="0" y="0.690633" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.508333" hotspotY="0.570423" original-source="C:\Users\surfacepro\Desktop\城市\办公区2震后.png">
+                        <collision-poly>
+                            <point x="0.484468" y="0.362593" />
+                            <point x="0.985294" y="0.619354" />
+                            <point x="0.772059" y="0.993671" />
+                            <point x="0" y="0.622484" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b2" pingpong="0" repeatcount="1" repeatto="0" sid="701902521817168" speed="0">
+                    <frame duration="1" hotspotX="0.557471" hotspotY="0.583942" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\便利店.png">
+                        <collision-poly>
+                            <point x="0.557471" y="0.248175" />
+                            <point x="0.902299" y="0.562043" />
+                            <point x="0.505747" y="0.839416" />
+                            <point x="0.16092" y="0.59854" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.557471" hotspotY="0.584" original-source="D:\工作\bj\地震\地震H5\城市\震后\便利店震后.png">
+                        <collision-poly>
+                            <point x="0.494253" y="0.175182" />
+                            <point x="1" y="0.656934" />
+                            <point x="0.442529" y="1" />
+                            <point x="0" y="0.715328" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b3" pingpong="0" repeatcount="1" repeatto="0" sid="759090382326296" speed="0">
+                    <frame duration="1" hotspotX="0.480176" hotspotY="0.374046" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\别墅区.png">
+                        <collision-poly>
+                            <point x="0.305066" y="0.402672" />
+                            <point x="0.464757" y="0.187023" />
+                            <point x="0.698238" y="0.442748" />
+                            <point x="0.460352" y="0.704199" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.488987" hotspotY="0.45098" original-source="D:\工作\bj\地震\地震H5\城市\震后\别墅区震后.png">
+                        <collision-poly>
+                            <point x="0.105727" y="0.418301" />
+                            <point x="0.502203" y="0.169935" />
+                            <point x="0.889868" y="0.470588" />
+                            <point x="0.951542" y="0.607843" />
+                            <point x="0.502203" y="0.973856" />
+                            <point x="0.0352423" y="0.633987" />
+                            <point x="0.0440529" y="0.470588" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b4" pingpong="0" repeatcount="1" repeatto="0" sid="598505571069804" speed="0">
+                    <frame duration="1" hotspotX="0.486381" hotspotY="0.388158" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\别墅区2.png">
+                        <collision-poly>
+                            <point x="0.249027" y="0.401317" />
+                            <point x="0.548638" y="0.171052" />
+                            <point x="0.758755" y="0.467105" />
+                            <point x="0.513618" y="0.743421" />
+                            <point x="0.276265" y="0.598685" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.486381" hotspotY="0.388158" original-source="D:\工作\bj\地震\地震H5\城市\震后\别墅区2震后.png">
+                        <collision-poly>
+                            <point x="0.101167" y="0.361843" />
+                            <point x="0.501945" y="0.0789472" />
+                            <point x="0.914397" y="0.342105" />
+                            <point x="0.918288" y="0.5" />
+                            <point x="0.501945" y="0.914474" />
+                            <point x="0.0894942" y="0.664474" />
+                            <point x="0.0428016" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b5" pingpong="0" repeatcount="1" repeatto="0" sid="223987274594039" speed="0">
+                    <frame duration="1" hotspotX="0.471074" hotspotY="0.617021" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\车站.png">
+                        <collision-poly>
+                            <point x="0" y="0.5461" />
+                            <point x="0.603306" y="0.304965" />
+                            <point x="1" y="0.758865" />
+                            <point x="0.140496" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.471074" hotspotY="0.617021" original-source="D:\工作\bj\地震\地震H5\城市\震后\车站震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.5461" />
+                            <point x="0.603306" y="0.304965" />
+                            <point x="1" y="0.758865" />
+                            <point x="0.140496" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b6" pingpong="0" repeatcount="1" repeatto="0" sid="255315008066645" speed="0">
+                    <frame duration="1" hotspotX="0.457895" hotspotY="0.585253" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\挡水墙.png">
+                        <collision-poly>
+                            <point x="0.2625" y="0.476793" />
+                            <point x="0.6825" y="0.185654" />
+                            <point x="0.7525" y="0.535865" />
+                            <point x="0.3375" y="0.814346" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.457895" hotspotY="0.585253" original-source="D:\工作\bj\地震\地震H5\城市\挡水墙.png">
+                        <collision-poly>
+                            <point x="0.2625" y="0.476793" />
+                            <point x="0.6825" y="0.185654" />
+                            <point x="0.7525" y="0.535865" />
+                            <point x="0.3375" y="0.814346" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b7" pingpong="0" repeatcount="1" repeatto="0" sid="754020378037150" speed="0">
+                    <frame duration="1" hotspotX="0.4975" hotspotY="0.599156" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\防固坡.png">
+                        <collision-poly>
+                            <point x="0.265" y="0.548523" />
+                            <point x="0.65" y="0.265823" />
+                            <point x="0.96" y="0.85654" />
+                            <point x="0.2825" y="0.953586" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.4975" hotspotY="0.599156" original-source="D:\工作\bj\地震\地震H5\城市\防固坡.png">
+                        <collision-poly>
+                            <point x="0.265" y="0.548523" />
+                            <point x="0.65" y="0.265823" />
+                            <point x="0.96" y="0.85654" />
+                            <point x="0.2825" y="0.953586" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b8" pingpong="0" repeatcount="1" repeatto="0" sid="405398047245135" speed="0">
+                    <frame duration="1" hotspotX="0.383266" hotspotY="0.551899" original-source="C:\Users\surfacepro\Desktop\XIUGAI\未标题-4.png">
+                        <collision-poly>
+                            <point x="0.0525" y="0.126582" />
+                            <point x="0.9125" y="0.493671" />
+                            <point x="0.835" y="0.919831" />
+                            <point x="0.0675" y="0.721519" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.37247" hotspotY="0.556962" original-source="C:\Users\surfacepro\Desktop\XIUGAI\未标题-4.png">
+                        <collision-poly>
+                            <point x="0.0525" y="0.126582" />
+                            <point x="0.9125" y="0.493671" />
+                            <point x="0.835" y="0.919831" />
+                            <point x="0.0675" y="0.721519" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b9" pingpong="0" repeatcount="1" repeatto="0" sid="640625518150097" speed="0">
+                    <frame duration="1" hotspotX="0.4775" hotspotY="0.620253" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\工厂.png">
+                        <collision-poly>
+                            <point x="0.29" y="0.679325" />
+                            <point x="0.445" y="0.451477" />
+                            <point x="0.64" y="0.691983" />
+                            <point x="0.4875" y="0.873418" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5075" hotspotY="0.649789" original-source="D:\工作\bj\地震\地震H5\城市\震后\工厂震后.png">
+                        <collision-poly>
+                            <point x="0.2475" y="0.670886" />
+                            <point x="0.4325" y="0.388186" />
+                            <point x="0.695" y="0.700422" />
+                            <point x="0.4875" y="0.873418" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b10" pingpong="0" repeatcount="1" repeatto="0" sid="365465443892179" speed="0">
+                    <frame duration="1" hotspotX="0.429293" hotspotY="0.391667" original-source="C:\D盘\工作\BJ\地震\地震H5\城市\城市无地基\公园.png">
+                        <collision-poly>
+                            <point x="0.247475" y="0.465183" />
+                            <point x="0.471634" y="0.229167" />
+                            <point x="0.731061" y="0.455117" />
+                            <point x="0.47883" y="0.770833" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.427136" hotspotY="0.38843" original-source="C:\D盘\工作\BJ\地震\地震H5\城市\震后\公园震后.png">
+                        <collision-poly>
+                            <point x="0.413317" y="0.221074" />
+                            <point x="0.697236" y="0.390496" />
+                            <point x="0.675879" y="0.737603" />
+                            <point x="0.246231" y="0.615702" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b11" pingpong="0" repeatcount="1" repeatto="0" sid="698504786371672" speed="0">
+                    <frame duration="1" hotspotX="0.454023" hotspotY="0.624114" original-source="C:\Users\surfacepro\Desktop\城市\加油站.png">
+                        <collision-poly>
+                            <point x="0.330611" y="0.259879" />
+                            <point x="1" y="0.892927" />
+                            <point x="0.717786" y="1" />
+                            <point x="0" y="0.914755" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.455621" hotspotY="0.627737" original-source="C:\Users\surfacepro\Desktop\城市\加油站震后.png">
+                        <collision-poly>
+                            <point x="0.485207" y="0.323586" />
+                            <point x="1" y="0.766851" />
+                            <point x="0.78854" y="1" />
+                            <point x="0" y="0.870697" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b12" pingpong="0" repeatcount="1" repeatto="0" sid="527675305669807" speed="0">
+                    <frame duration="1" hotspotX="0.460317" hotspotY="0.648148" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\监测局.png">
+                        <collision-poly>
+                            <point x="0.0634921" y="0.666668" />
+                            <point x="0.507937" y="0.425925" />
+                            <point x="1" y="0.728395" />
+                            <point x="0.777778" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.460317" hotspotY="0.649682" original-source="D:\工作\bj\地震\地震H5\城市\震后\监测局震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.648149" />
+                            <point x="0.5" y="0.32716" />
+                            <point x="1" y="0.728395" />
+                            <point x="0.777778" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b13" pingpong="0" repeatcount="1" repeatto="0" sid="818669690468748" speed="0">
+                    <frame duration="1" hotspotX="0.507614" hotspotY="0.487179" original-source="D:\工作\bj\地震\地震H5\城市\居民区.png">
+                        <collision-poly>
+                            <point x="0.197969" y="0.589744" />
+                            <point x="0.502538" y="0.262821" />
+                            <point x="0.862944" y="0.647435" />
+                            <point x="0.517766" y="0.833333" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.502538" hotspotY="0.562842" original-source="D:\工作\bj\地震\地震H5\城市\震后\居民区震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.57913" />
+                            <point x="0.502615" y="0.299181" />
+                            <point x="1" y="0.487809" />
+                            <point x="1" y="0.587432" />
+                            <point x="1" y="0.72026" />
+                            <point x="0.52292" y="1" />
+                            <point x="0" y="0.72026" />
+                            <point x="0" y="0.587432" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b14" pingpong="0" repeatcount="1" repeatto="0" sid="307854561735231" speed="0">
+                    <frame duration="1" hotspotX="0.497409" hotspotY="0.506849" original-source="C:\Users\surfacepro\Desktop\XIUGAI\居民区2.png">
+                        <collision-poly>
+                            <point x="0.186529" y="0.61225" />
+                            <point x="0.530415" y="0.332642" />
+                            <point x="0.829015" y="0.658749" />
+                            <point x="0.493289" y="0.856164" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.497409" hotspotY="0.586207" original-source="C:\Users\surfacepro\Desktop\XIUGAI\居民区2震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.640163" />
+                            <point x="0.597772" y="0.307849" />
+                            <point x="0.984456" y="0.765387" />
+                            <point x="0.482926" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b15" pingpong="0" repeatcount="1" repeatto="0" sid="859035165958994" speed="0">
+                    <frame duration="1" hotspotX="0.479675" hotspotY="0.441667" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\美术馆.png">
+                        <collision-poly>
+                            <point x="0" y="0.775" />
+                            <point x="0.634146" y="0.216666" />
+                            <point x="1" y="0.624999" />
+                            <point x="0.487805" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.456522" hotspotY="0.416667" original-source="D:\工作\bj\地震\地震H5\城市\震后\美术馆震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.775" />
+                            <point x="0.634146" y="0.216666" />
+                            <point x="1" y="0.624999" />
+                            <point x="0.487805" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b16" pingpong="0" repeatcount="1" repeatto="0" sid="524867478509370" speed="0">
+                    <frame duration="1" hotspotX="0.572581" hotspotY="0.555556" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\商业区.png">
+                        <collision-poly>
+                            <point x="0.0564516" y="0.722222" />
+                            <point x="0.548387" y="0.36508" />
+                            <point x="1" y="0.722222" />
+                            <point x="0.798387" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.572581" hotspotY="0.547619" original-source="D:\工作\bj\地震\地震H5\城市\震后\商业区震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.587301" />
+                            <point x="0.653226" y="0.214286" />
+                            <point x="1" y="0.722222" />
+                            <point x="0.798387" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b17" pingpong="0" repeatcount="1" repeatto="0" sid="837364763034554" speed="0">
+                    <frame duration="1" hotspotX="0.472393" hotspotY="0.609023" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\商业区2.png">
+                        <collision-poly>
+                            <point x="0.0613497" y="0.721805" />
+                            <point x="0.503067" y="0.398497" />
+                            <point x="0.889571" y="0.751878" />
+                            <point x="0.576687" y="0.977444" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.429448" hotspotY="0.601504" original-source="D:\工作\bj\地震\地震H5\城市\震后\商业区2震后.png">
+                        <collision-poly>
+                            <point x="0.0122699" y="0.571429" />
+                            <point x="0.570552" y="0.240602" />
+                            <point x="1" y="0.80451" />
+                            <point x="0.650307" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b18" pingpong="0" repeatcount="1" repeatto="0" sid="230348444734075" speed="0">
+                    <frame duration="1" hotspotX="0.390805" hotspotY="0.4" original-source="C:\Users\surfacepro\Desktop\城市\学校.png">
+                        <collision-poly>
+                            <point x="0.0229885" y="0.655746" />
+                            <point x="0.380131" y="0" />
+                            <point x="1" y="0.596361" />
+                            <point x="0.582101" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.391061" hotspotY="0.397849" original-source="C:\Users\surfacepro\Desktop\城市\学校震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.258342" />
+                            <point x="0.343175" y="0" />
+                            <point x="1" y="0.675752" />
+                            <point x="0.742219" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b19" pingpong="0" repeatcount="1" repeatto="0" sid="722124717873815" speed="0">
+                    <frame duration="1" hotspotX="0.459627" hotspotY="0.462185" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\医院.png">
+                        <collision-poly>
+                            <point x="0.186335" y="0.579833" />
+                            <point x="0.546583" y="0.17647" />
+                            <point x="0.863354" y="0.588235" />
+                            <point x="0.552795" y="0.890756" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.447205" hotspotY="0.462185" original-source="D:\工作\bj\地震\地震H5\城市\震后\医院震后.png">
+                        <collision-poly>
+                            <point x="0.0124224" y="0.470589" />
+                            <point x="0.565217" y="0.0672266" />
+                            <point x="1" y="0.697479" />
+                            <point x="0.73913" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b20" pingpong="0" repeatcount="1" repeatto="0" sid="656884721863726" speed="0">
+                    <frame duration="1" hotspotX="0.478571" hotspotY="0.790393" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\政务楼.png">
+                        <collision-poly>
+                            <point x="0.107143" y="0.838428" />
+                            <point x="0.507143" y="0.676856" />
+                            <point x="0.971429" y="0.90393" />
+                            <point x="0.607143" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.474453" hotspotY="0.786667" original-source="D:\工作\bj\地震\地震H5\城市\震后\政务楼震后.png">
+                        <collision-poly>
+                            <point x="0" y="0.799127" />
+                            <point x="0.457143" y="0.537118" />
+                            <point x="1" y="0.934498" />
+                            <point x="0.607143" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b21" pingpong="0" repeatcount="1" repeatto="0" sid="567362703208184" speed="0">
+                    <frame duration="1" hotspotX="0.485" hotspotY="0.481013" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\住宅区.png">
+                        <collision-poly>
+                            <point x="0.3375" y="0.489451" />
+                            <point x="0.49" y="0.36287" />
+                            <point x="0.6175" y="0.49789" />
+                            <point x="0.51" y="0.704641" />
+                            <point x="0.39" y="0.607595" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.485" hotspotY="0.481013" original-source="D:\工作\bj\地震\地震H5\城市\震后\住宅区震后.png">
+                        <collision-poly>
+                            <point x="0.27" y="0.455696" />
+                            <point x="0.5" y="0.253165" />
+                            <point x="0.71" y="0.489451" />
+                            <point x="0.7225" y="0.49789" />
+                            <point x="0.7225" y="0.531646" />
+                            <point x="0.5" y="0.763713" />
+                            <point x="0.2775" y="0.531646" />
+                            <point x="0.27" y="0.49789" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b22" pingpong="0" repeatcount="1" repeatto="0" sid="637064265021972" speed="0">
+                    <frame duration="1" hotspotX="0.557423" hotspotY="0.484018" original-source="C:\Users\46994\Desktop\提坝1.png">
+                        <collision-poly>
+                            <point x="0.0351413" y="0.220829" />
+                            <point x="0.56468" y="0.314997" />
+                            <point x="0.966387" y="0.736677" />
+                            <point x="0.618411" y="0.826193" />
+                            <point x="0.131907" y="0.58" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501401" hotspotY="0.502283" original-source="D:\工作\bj\地震\地震H5\城市\城市无地基\提坝1.png">
+                        <collision-poly>
+                            <point x="0.0588235" y="0.0958904" />
+                            <point x="0.498599" y="0.328767" />
+                            <point x="0.683473" y="0.515982" />
+                            <point x="0.669468" y="0.497717" />
+                            <point x="0.94958" y="0.917808" />
+                            <point x="0.498599" y="0.561644" />
+                            <point x="0.352941" y="0.424658" />
+                            <point x="0.431373" y="0.497717" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b23" pingpong="0" repeatcount="1" repeatto="0" sid="593286811251631" speed="0">
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.720588" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\经抗震加固的老旧房屋.png">
+                        <collision-poly>
+                            <point x="0.290909" y="0.235294" />
+                            <point x="0.5" y="0.139706" />
+                            <point x="0.818182" y="0.147059" />
+                            <point x="1" y="0.5" />
+                            <point x="0.827273" y="0.860294" />
+                            <point x="0.5" y="0.992647" />
+                            <point x="0.190909" y="0.845588" />
+                            <point x="0.0636364" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.518182" hotspotY="0.727941" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\经抗震加固的老旧房屋.png">
+                        <collision-poly>
+                            <point x="0.290909" y="0.235294" />
+                            <point x="0.5" y="0.139706" />
+                            <point x="0.818182" y="0.147059" />
+                            <point x="1" y="0.5" />
+                            <point x="0.827273" y="0.860294" />
+                            <point x="0.5" y="0.992647" />
+                            <point x="0.190909" y="0.845588" />
+                            <point x="0.0636364" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="b24" pingpong="0" repeatcount="1" repeatto="0" sid="613060289547239" speed="0">
+                    <frame duration="1" hotspotX="0.589286" hotspotY="0.875" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\地震断层避让牌.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.226563" />
+                            <point x="0.982143" y="0.015625" />
+                            <point x="1" y="0.515625" />
+                            <point x="1" y="1" />
+                            <point x="0.258929" y="1" />
+                            <point x="0.0982143" y="0.914063" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.607143" hotspotY="0.867188" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\地震断层避让牌.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.226563" />
+                            <point x="0.982143" y="0.015625" />
+                            <point x="1" y="0.507813" />
+                            <point x="1" y="1" />
+                            <point x="0.366071" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="233034366108060">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="buildname" sid="294755616442888">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="325128775909471">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="bgImages" sid="905428927749264">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="884702576177051">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952917313235166" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\D盘\工作\BJ\地震\地震H5\场景地面\空地0817.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.0013947" y="0.999091" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\D盘\工作\BJ\地震\地震H5\场景地面\空地081702.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ground" sid="959605086857042">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="280145161378114" type="number" />
+                <instance-variable name="state" sid="310345510955882" type="string" />
+                <instance-variable name="score" sid="522422612860099" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="721925929768142">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="338671613669777" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="updownbtn" sid="268759238953019">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="updown" sid="129359025751171" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="AnchorMod" sid="305308812499181">
+                    <behavior id="rex_Anchor_mod" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="861038548541219" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\打开.png">
+                        <collision-poly>
+                            <point x="0.025" y="0.075" />
+                            <point x="0.5" y="0" />
+                            <point x="0.975" y="0.075" />
+                            <point x="1" y="0.5" />
+                            <point x="0.975" y="0.925" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0333333" y="0.9" />
+                            <point x="0.00833333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\打开1.png">
+                        <collision-poly>
+                            <point x="0.025" y="0.0810811" />
+                            <point x="0.5" y="0" />
+                            <point x="0.975" y="0.0810811" />
+                            <point x="1" y="0.486486" />
+                            <point x="0.975" y="0.918919" />
+                            <point x="0.5" y="1" />
+                            <point x="0.025" y="0.918919" />
+                            <point x="0.00833333" y="0.486486" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="surebtn" sid="824814071230866">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666074348468752" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\对.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="cancelbtn" sid="931405511847039">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="223703845855205" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\错.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btndb" sid="207604773589526">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="820680871956267">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="896810184366462" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tipsTxt" sid="373334976067820">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="467446449184106">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="MagiCam" sid="135422976188016">
+            <plugin id="MagiCam" />
+        </object-type>
+        <object-type name="sky" sid="504129261722543">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="202802376343822">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="760484751698680" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="thunder" sid="664205216559384">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="311622229275097">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="975563979304410" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\46994\Desktop\trunder.png">
+                        <collision-poly>
+                            <point x="0.0213415" y="0.015625" />
+                            <point x="0.5" y="0.216518" />
+                            <point x="0.423781" y="0.421875" />
+                            <point x="0.545732" y="0.5" />
+                            <point x="0.902439" y="0.928571" />
+                            <point x="0.5" y="0.542411" />
+                            <point x="0.210366" y="0.845982" />
+                            <point x="0.286585" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="level" sid="883183270000767">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="EaseTween" sid="369364092152661">
+                    <behavior id="lunarray_Tween" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="504880626603308" speed="0">
+                    <frame duration="1" hotspotX="0.500928" hotspotY="0.500818" original-source="D:\工作\bj\地震\地震H5\动态\A框.png">
+                        <collision-poly>
+                            <point x="0.0178571" y="0.0408163" />
+                            <point x="0.5" y="0.0102041" />
+                            <point x="0.982143" y="0.0408163" />
+                            <point x="1" y="0.5" />
+                            <point x="0.982143" y="0.959184" />
+                            <point x="0.5" y="0.989796" />
+                            <point x="0.0178571" y="0.959184" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500928" hotspotY="0.500818" original-source="D:\工作\bj\地震\地震H5\动态\B框.png">
+                        <collision-poly>
+                            <point x="0.0178571" y="0.0408163" />
+                            <point x="0.5" y="0.0102041" />
+                            <point x="0.982143" y="0.0408163" />
+                            <point x="1" y="0.5" />
+                            <point x="0.982143" y="0.959184" />
+                            <point x="0.5" y="0.989796" />
+                            <point x="0.0178571" y="0.959184" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500928" hotspotY="0.500818" original-source="D:\工作\bj\地震\地震H5\动态\C框.png">
+                        <collision-poly>
+                            <point x="0.0178571" y="0.0408163" />
+                            <point x="0.5" y="0.0102041" />
+                            <point x="0.982143" y="0.0408163" />
+                            <point x="1" y="0.5" />
+                            <point x="0.982143" y="0.959184" />
+                            <point x="0.5" y="0.989796" />
+                            <point x="0.0178571" y="0.959184" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="startbtn" sid="782924467426504">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="986476567843402">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="742231543002428" speed="0">
+                    <frame duration="1" hotspotX="0.501916" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\开始.png">
+                        <collision-poly>
+                            <point x="0.0727273" y="0.161074" />
+                            <point x="0.5" y="0.100671" />
+                            <point x="0.936364" y="0.14094" />
+                            <point x="0.978788" y="0.496644" />
+                            <point x="0.945455" y="0.879195" />
+                            <point x="0.5" y="0.966443" />
+                            <point x="0.0727273" y="0.838926" />
+                            <point x="0.0424242" y="0.496644" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501916" hotspotY="0.506173" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\开始1.png">
+                        <collision-poly>
+                            <point x="0.0229885" y="0.0740741" />
+                            <point x="0.498084" y="0" />
+                            <point x="0.977012" y="0.0740741" />
+                            <point x="1" y="0.493827" />
+                            <point x="0.977012" y="0.925926" />
+                            <point x="0.498084" y="0.987654" />
+                            <point x="0.0268199" y="0.91358" />
+                            <point x="0.00383142" y="0.493827" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="loaddb" sid="691964564955739">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="839912106558341" speed="5">
+                    <frame duration="1" hotspotX="0.500709" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\进度条1.png">
+                        <collision-poly>
+                            <point x="0.0524823" y="0.925" />
+                            <point x="0.499291" y="0" />
+                            <point x="0.947518" y="0.925" />
+                            <point x="0.960284" y="0.3" />
+                            <point x="0.499291" y="0.975" />
+                            <point x="0.0439716" y="0.225" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="9patch" sid="897982586585844">
+            <plugin id="NinePatch" />
+            <texture original-source="D:\工作\bj\地震\地震H5\进度条2.png" />
+        </object-type>
+        <object-type global="1" name="Dictionary" sid="595812879276637">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="zn1" sid="451209464793307">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="236251754203024" speed="0">
+                    <frame duration="1" hotspotX="0.502183" hotspotY="0.502164" original-source="D:\工作\bj\地震\地震H5\动态\河流溢出3.png">
+                        <collision-poly>
+                            <point x="0.207424" y="0.411255" />
+                            <point x="0.5" y="0.164502" />
+                            <point x="0.984716" y="0.030303" />
+                            <point x="0.786026" y="0.497835" />
+                            <point x="0.762009" y="0.528139" />
+                            <point x="0.5" y="0.818182" />
+                            <point x="0.135371" y="0.731602" />
+                            <point x="0.0502183" y="0.497835" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.502183" hotspotY="0.502128" original-source="D:\工作\bj\地震\地震H5\动态\河流溢出2.png">
+                        <collision-poly>
+                            <point x="0.19214" y="0.374468" />
+                            <point x="0.5" y="0" />
+                            <point x="0.978166" y="0.0425532" />
+                            <point x="0.792576" y="0.497872" />
+                            <point x="0.762009" y="0.53617" />
+                            <point x="0.5" y="0.821277" />
+                            <point x="0.135371" y="0.73617" />
+                            <point x="0.0436681" y="0.497872" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501104" hotspotY="0.50211" original-source="D:\工作\bj\地震\地震H5\动态\河流溢出1.png">
+                        <collision-poly>
+                            <point x="0.209713" y="0.257384" />
+                            <point x="0.682119" y="0.109705" />
+                            <point x="0.856512" y="0.42616" />
+                            <point x="0.966887" y="0.240506" />
+                            <point x="0.682119" y="0.616034" />
+                            <point x="0.134658" y="0.742616" />
+                            <point x="0.145695" y="0.42616" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50116" hotspotY="0.501832" original-source="D:\工作\bj\地震\地震H5\动态\河流溢出.png">
+                        <collision-poly>
+                            <point x="0.167053" y="0.263736" />
+                            <point x="0.49884" y="0.018315" />
+                            <point x="0.955916" y="0.0695971" />
+                            <point x="0.907193" y="0.498168" />
+                            <point x="0.49884" y="0.864469" />
+                            <point x="0.141531" y="0.776557" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zn2" sid="135087720723312">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="794094840468674" speed="0">
+                    <frame duration="1" hotspotX="1.01053" hotspotY="0.0126582" original-source="D:\工作\bj\地震\地震H5\动态\滑坡右4.png" />
+                    <frame duration="1" hotspotX="1" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡右3.png" />
+                    <frame duration="1" hotspotX="0.996094" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡右2.png" />
+                    <frame duration="1" hotspotX="0.996644" hotspotY="0.00858369" original-source="D:\工作\bj\地震\地震H5\动态\滑坡右1.png" />
+                    <frame duration="1" hotspotX="0.997159" hotspotY="-0.00340136" original-source="D:\工作\bj\地震\地震H5\动态\滑坡右.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zn3" sid="620656705533926">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="851931486328423" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡左4.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡左3.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡左2.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡左1.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\动态\滑坡左.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zn4" sid="546145076746561">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449158102444682" speed="5">
+                    <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\动态\火1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\动态\火.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="finishbtn" sid="379567625377018">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464412192314877" speed="0">
+                    <frame duration="1" hotspotX="0.508333" hotspotY="0.375" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\完成.png">
+                        <collision-poly>
+                            <point x="0.025" y="0.075" />
+                            <point x="0.5" y="0" />
+                            <point x="0.975" y="0.075" />
+                            <point x="1" y="0.5" />
+                            <point x="0.975" y="0.925" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0333333" y="0.9" />
+                            <point x="0.00833333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.508333" hotspotY="0.378378" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\完成1.png">
+                        <collision-poly>
+                            <point x="0.025" y="0.0810811" />
+                            <point x="0.5" y="0" />
+                            <point x="0.975" y="0.0810811" />
+                            <point x="1" y="0.486486" />
+                            <point x="0.975" y="0.918919" />
+                            <point x="0.5" y="1" />
+                            <point x="0.025" y="0.918919" />
+                            <point x="0.00833333" y="0.486486" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="jbTxt" sid="704325441492829">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="678898733811853">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Typing" sid="272134521147695">
+                    <behavior id="Rex_text_typing" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="zn5" sid="451085507330798">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471777125494635" speed="0">
+                    <frame duration="1" hotspotX="0.00466744" hotspotY="0.993366" original-source="D:\工作\bj\地震\地震H5\动态\海啸原始.png" />
+                    <frame duration="1" hotspotX="0.000943396" hotspotY="0.995957" original-source="D:\工作\bj\地震\地震H5\动态\海啸2.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.995062" original-source="D:\工作\bj\地震\地震H5\动态\海啸3.png" />
+                    <frame duration="1" hotspotX="0.00329489" hotspotY="0.995068" original-source="D:\工作\bj\地震\地震H5\动态\海啸4.png" />
+                    <frame duration="1" hotspotX="0.00227015" hotspotY="0.993818" original-source="D:\工作\bj\地震\地震H5\动态\海啸1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="FSM" sid="625243212144593">
+            <plugin id="Rex_FSM" />
+        </object-type>
+        <object-type name="jb" sid="622339811978576">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="endX" sid="724073190541355" type="number" />
+                <instance-variable name="endY" sid="411468370158621" type="number" />
+                <instance-variable name="startX" sid="137313926472987" type="number" />
+                <instance-variable name="startY" sid="154704791419339" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="MoveTo" sid="376640493191947">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="274183956992435" speed="3">
+                    <frame duration="1" hotspotX="0.489011" hotspotY="0.480132" original-source="D:\工作\bj\地震\地震H5\吉宝动作.png">
+                        <collision-poly>
+                            <point x="0.0780699" y="0.154647" />
+                            <point x="0.489313" y="0.00596865" />
+                            <point x="0.917341" y="0.147022" />
+                            <point x="1" y="0.478689" />
+                            <point x="0.908948" y="0.806545" />
+                            <point x="0.489313" y="0.711237" />
+                            <point x="0.0948553" y="0.795108" />
+                            <point x="0" y="0.478689" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.489011" hotspotY="0.480132" original-source="C:\Users\surfacepro\Desktop\吉宝\吉宝动作2.png" />
+                    <frame duration="1" hotspotX="0.489011" hotspotY="0.480132" original-source="D:\工作\bj\地震\地震H5\吉宝动作1.png">
+                        <collision-poly>
+                            <point x="0.252747" y="0.215232" />
+                            <point x="0.472527" y="0.0496689" />
+                            <point x="0.741758" y="0.18543" />
+                            <point x="0.967033" y="0.466887" />
+                            <point x="0.763736" y="0.761589" />
+                            <point x="0.472527" y="0.715232" />
+                            <point x="0.291209" y="0.695364" />
+                            <point x="0.0934066" y="0.466887" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tipsdb" sid="304771729793913">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363980189935929" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50211" original-source="C:\Users\surfacepro\Desktop\新建文件夹\对话框.png">
+                        <collision-poly>
+                            <point x="0.0075" y="0.0126582" />
+                            <point x="0.9925" y="0.0126582" />
+                            <point x="0.9925" y="0.987342" />
+                            <point x="0.0075" y="0.987342" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\新建文件夹\开始.png">
+                        <image-point name="Imagepoint 1" x="0.0975" y="0.0961538" />
+                        <collision-poly>
+                            <point x="0.00932401" y="0.0142349" />
+                            <point x="0.498834" y="0" />
+                            <point x="0.990676" y="0.0142349" />
+                            <point x="0.990676" y="0.985765" />
+                            <point x="0.498834" y="1" />
+                            <point x="0.00932401" y="0.985765" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\新建文件夹\结束1.png">
+                        <collision-poly>
+                            <point x="0.0075" y="0.0144231" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9925" y="0.0144231" />
+                            <point x="0.9925" y="0.985577" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0075" y="0.985577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501166" hotspotY="0.501779" original-source="C:\Users\surfacepro\Desktop\新建文件夹\结束2.png">
+                        <collision-poly>
+                            <point x="0.00699301" y="0.0106762" />
+                            <point x="0.993007" y="0.0106762" />
+                            <point x="0.993007" y="0.989324" />
+                            <point x="0.00699301" y="0.989324" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="TimeLine" sid="196142808137026">
+            <plugin id="Rex_TimeLine" />
+        </object-type>
+        <object-type name="tipsSs" sid="921225309175658">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="887841452656160">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="174901313195121" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\工作\bj\地震\地震H5\手势.png">
+                        <collision-poly>
+                            <point x="0.011976" y="0.0792079" />
+                            <point x="0.51497" y="0.188119" />
+                            <point x="0.772455" y="0.49505" />
+                            <point x="0.712575" y="0.425743" />
+                            <point x="0.51497" y="0.722772" />
+                            <point x="0.197605" y="0.475248" />
+                            <point x="0.167665" y="0.425743" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tipsJt" sid="837555089111767">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="709267764599748">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="851941336800421" speed="5">
+                    <frame duration="1" hotspotX="0.0379747" hotspotY="0.990476" original-source="D:\工作\bj\地震\地震H5\箭头.png">
+                        <collision-poly>
+                            <point x="0.245614" y="0.323944" />
+                            <point x="0.438596" y="0.225352" />
+                            <point x="0.947368" y="0.084507" />
+                            <point x="0.807018" y="0.43662" />
+                            <point x="0.701754" y="0.591549" />
+                            <point x="0.438596" y="0.619718" />
+                            <point x="0.298246" y="0.507042" />
+                            <point x="0.0877193" y="0.43662" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="debug" sid="777319912455479">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="againbtn" sid="789031165915210">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="584726589151782" speed="0">
+                    <frame duration="1" hotspotX="0.48659" hotspotY="0.465909" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\再玩一次.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.80303" />
+                            <point x="0" y="0.787879" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.48659" hotspotY="0.469136" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\再玩一次1.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.80303" />
+                            <point x="0" y="0.787879" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zn6" sid="963381932400664">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="a1" pingpong="0" repeatcount="1" repeatto="0" sid="175488539159031" speed="0">
+                    <frame duration="1" hotspotX="0.501873" hotspotY="0.5" original-source="D:\工作\bj\地震\地震H5\城市\震后\泥块.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="a2" pingpong="0" repeatcount="1" repeatto="0" sid="870922276097874" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502994" original-source="C:\D盘\工作\BJ\地震\地震H5\城市\震后\石头.png">
+                        <collision-poly>
+                            <point x="0.149083" y="0.389222" />
+                            <point x="0.5" y="0.263473" />
+                            <point x="0.905963" y="0.245509" />
+                            <point x="0.905963" y="0.754491" />
+                            <point x="0.5" y="0.994012" />
+                            <point x="0.135321" y="0.646707" />
+                            <point x="0.0756881" y="0.497006" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="startbg" sid="465144977671668">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="366679084100462" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\D盘\工作\BJ\地震\地震H5\开始 结束\640 1044-2.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.0015625" y="0.999042" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="title" sid="942438773623259">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="186980246858073" speed="5">
+                    <frame duration="1" hotspotX="0.500728" hotspotY="0.504323" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\标题.png">
+                        <collision-poly>
+                            <point x="0.0353698" y="0.128655" />
+                            <point x="0.5" y="0.327485" />
+                            <point x="0.966238" y="0.122807" />
+                            <point x="0.995177" y="0.497076" />
+                            <point x="0.975884" y="0.912281" />
+                            <point x="0.5" y="0.865497" />
+                            <point x="0.0257235" y="0.906433" />
+                            <point x="0.00803859" y="0.497076" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="yun" sid="519376584519632">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="endX" sid="849084021955933" type="number" />
+                <instance-variable name="startX" sid="543146411046375" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="MoveTo" sid="950536874559017">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="169666517960370" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504587" original-source="C:\Users\surfacepro\Desktop\1-6\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\1-6\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\1-6\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\1-6\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\1-6\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\1-6\6.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="endtitle" sid="475265308123637">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404621760023014" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502924" original-source="C:\D盘\工作\BJ\地震\地震H5\开始 结束\游戏结束.png">
+                        <collision-poly>
+                            <point x="0.0353698" y="0.128655" />
+                            <point x="0.963023" y="0.134503" />
+                            <point x="0.988746" y="0.497076" />
+                            <point x="0.974277" y="0.906433" />
+                            <point x="0.0209003" y="0.923977" />
+                            <point x="0.00160772" y="0.497076" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zn7" sid="967178237503701">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="710290662005297">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588729662127267" speed="10">
+                    <frame duration="1" hotspotX="0.500609" hotspotY="0.501002" original-source="C:\D盘\工作\BJ\地震\地震H5\动态\龙卷风.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501027" original-source="C:\D盘\工作\BJ\地震\地震H5\动态\龙卷风1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501053" original-source="C:\D盘\工作\BJ\地震\地震H5\动态\龙卷风2.png" />
+                    <frame duration="1" hotspotX="0.500719" hotspotY="0.5" original-source="C:\D盘\工作\BJ\地震\地震H5\动态\龙卷风3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="833987112616310">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="rankbtn" sid="288975779181010">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="AnchorMod" sid="365942959724962">
+                    <behavior id="rex_Anchor_mod" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588247765014378" speed="0">
+                    <frame duration="1" hotspotX="0.501916" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\排行榜.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.795276" />
+                            <point x="0.0106762" y="0.771654" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501916" hotspotY="0.506173" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\排行榜1.png">
+                        <collision-poly>
+                            <point x="0.0355872" y="0.0787402" />
+                            <point x="0.498221" y="0.00787402" />
+                            <point x="0.939502" y="0.133858" />
+                            <point x="0.950178" y="0.496063" />
+                            <point x="0.907473" y="0.795276" />
+                            <point x="0.498221" y="0.866142" />
+                            <point x="0.088968" y="0.80315" />
+                            <point x="0.0142349" y="0.496063" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rankdb" sid="292473533340325">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="157437723046075" speed="5">
+                    <frame duration="1" hotspotX="0.500917" hotspotY="0.500759" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\排行榜.png">
+                        <image-point name="Imagepoint 1" x="0" y="0.288316" />
+                        <collision-poly>
+                            <point x="0.00550459" y="0.00455235" />
+                            <point x="0.994495" y="0.00455235" />
+                            <point x="0.994495" y="0.995448" />
+                            <point x="0.00550459" y="0.995448" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ranktitle" sid="742076176393094">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="140361895316108" speed="5">
+                    <frame duration="1" hotspotX="0.501945" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\tips.png">
+                        <collision-poly>
+                            <point x="0.0194553" y="0.125" />
+                            <point x="0.953307" y="0.3" />
+                            <point x="0.996109" y="0.5" />
+                            <point x="0.957198" y="0.725" />
+                            <point x="0.0661479" y="0.575" />
+                            <point x="0.0350195" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_a_score" sid="887704315854430">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="955148291530226" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯A.png">
+                        <collision-poly>
+                            <point x="0.0238095" y="0.0178571" />
+                            <point x="0.97619" y="0.0178571" />
+                            <point x="0.857143" y="0.5" />
+                            <point x="0.833333" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.166667" y="0.875" />
+                            <point x="0.142857" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_a_db" sid="437755386505855">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="942955017899298" speed="5">
+                    <frame duration="1" hotspotX="0.501114" hotspotY="0.503597" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\frist.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="jbui" sid="907150659329992">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="290282988058143" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506173" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\吉宝.png">
+                        <collision-poly>
+                            <point x="0.3" y="0.185185" />
+                            <point x="0.5" y="0.123457" />
+                            <point x="0.7" y="0.185185" />
+                            <point x="1" y="0.493827" />
+                            <point x="0.76" y="0.851852" />
+                            <point x="0.5" y="0.876543" />
+                            <point x="0.26" y="0.839506" />
+                            <point x="0.04" y="0.493827" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_a_head" sid="231637726406405">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="996054088547396" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_m_db" sid="712020102632133">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="241714486556939" speed="5">
+                    <frame duration="1" hotspotX="0.500917" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\单个排名.png">
+                        <collision-poly>
+                            <point x="0.00550459" y="0.0294118" />
+                            <point x="0.499083" y="0" />
+                            <point x="0.994495" y="0.0294118" />
+                            <point x="0.994495" y="0.970588" />
+                            <point x="0.499083" y="1" />
+                            <point x="0.00550459" y="0.970588" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_a_name" sid="761843946512295">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="rank_m_score" sid="528130855309690">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372376085206253" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯A.png" />
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.508772" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯b.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯c.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_m_head" sid="182599607830433">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="892596703876832" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rankheadzz" sid="924896978571288">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="910298610684852" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\第1.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.0135135" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rank_m_name" sid="951183284099119">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ListControl" sid="654609161215576">
+            <plugin id="Rex_ListCtrl" />
+            <behaviors>
+                <behavior-type name="TouchArea" sid="161111326663703">
+                    <behavior id="Rex_TouchArea2" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="426104654701117">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="resRank_zz" sid="879097294830484">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="460058606450207" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\第1.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.0135135" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="resRank_head" sid="808254206398205">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="20" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471742348641474" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="resRank_score" sid="894845882737735">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459038709047128" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯A.png" />
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.508772" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯b.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\奖杯c.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="resRank_name" sid="233052923884125">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="resRank_numb" sid="148749771394866">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="rank_close" sid="739060585161024">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="937877541250153" speed="5">
+                    <frame duration="1" hotspotX="0.507937" hotspotY="0.507937" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\关闭.png">
+                        <collision-poly>
+                            <point x="0.15873" y="0.15873" />
+                            <point x="0.492063" y="0" />
+                            <point x="0.857143" y="0.142857" />
+                            <point x="0.984127" y="0.492063" />
+                            <point x="0.825397" y="0.825397" />
+                            <point x="0.492063" y="0.936508" />
+                            <point x="0.190476" y="0.809524" />
+                            <point x="0.047619" y="0.492063" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="resRank_db" sid="302490822745498">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="840122083336618" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\单个排名.png">
+                        <image-point name="score" x="0.13945" y="0.5" />
+                        <image-point name="head" x="0.354128" y="0.5" />
+                        <image-point name="name" x="0.53945" y="0.5" />
+                        <image-point name="score" x="0.838532" y="0.5" />
+                        <collision-poly>
+                            <point x="0.00550459" y="0.0294118" />
+                            <point x="0.499083" y="0" />
+                            <point x="0.994495" y="0.0294118" />
+                            <point x="0.994495" y="0.970588" />
+                            <point x="0.499083" y="1" />
+                            <point x="0.00550459" y="0.970588" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="resRank_line" sid="183938956158699">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="434163214008327" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\surfacepro\Desktop\地震局——H5配音\韧性城市排行榜\分割线.png">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AJAX" sid="881551777170795">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type global="1" name="JSON" sid="235769747981538">
+            <plugin id="Rex_Hash" />
+        </object-type>
+        <object-type name="resRank_ch" sid="145681182931263">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="duanceng" sid="680890935044582">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="840392852176047">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="641600629167042" speed="5">
+                    <frame duration="1" hotspotX="0.503145" hotspotY="0.5" original-source="C:\Users\surfacepro\Desktop\韧性城市修改\断层.png">
+                        <collision-poly>
+                            <point x="0.358491" y="0.606383" />
+                            <point x="0.987421" y="0.0212766" />
+                            <point x="0.534591" y="0.5" />
+                            <point x="0.641509" y="0.393617" />
+                            <point x="0.496855" y="0.542553" />
+                            <point x="0.0188679" y="0.968085" />
+                            <point x="0.459119" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="item" plugin-id="Sprite" sid="876521863229905">
+            <members>
+                <member>buildbtn</member>
+            </members>
+        </family>
+        <family name="ctrlbtn" plugin-id="Sprite" sid="493998037286457">
+            <members>
+                <member>cancelbtn</member>
+                <member>surebtn</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pin" sid="211869035294943">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="anim" plugin-id="Sprite" sid="586334275590258">
+            <members>
+                <member>zn1</member>
+                <member>zn2</member>
+                <member>zn3</member>
+                <member>zn4</member>
+                <member>zn5</member>
+                <member>zn6</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pin" sid="604027109251613">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="statebtn" plugin-id="Sprite" sid="860915992700544">
+            <members>
+                <member>againbtn</member>
+                <member>finishbtn</member>
+                <member>startbtn</member>
+            </members>
+            <behaviors>
+                <behavior-type name="AnchorMod" sid="870712844269991">
+                    <behavior id="rex_Anchor_mod" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="rank_sprite" plugin-id="Sprite" sid="680709533111860">
+            <members>
+                <member>jbui</member>
+                <member>rank_a_db</member>
+                <member>rank_a_head</member>
+                <member>rank_a_score</member>
+                <member>rank_close</member>
+                <member>rank_m_db</member>
+                <member>rank_m_head</member>
+                <member>rank_m_score</member>
+                <member>rankheadzz</member>
+                <member>ranktitle</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pin" sid="904459567553445">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="rank_text" plugin-id="Text" sid="978074447056132">
+            <members>
+                <member>rank_a_name</member>
+                <member>rank_m_name</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pin" sid="629275799108946">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>load.xml</layout>
+        <layout>game.xml</layout>
+        <layout>res.xml</layout>
+        <layout>end.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>loadEvt.xml</event-sheet>
+        <event-sheet>gameEvt.xml</event-sheet>
+        <event-sheet>fun.xml</event-sheet>
+        <event-sheet>endEvt.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="3" />
+        <global-instance type="TouchWrap" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+                <enable>Yes</enable>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="13" />
+        <global-instance type="MagiCam" uid="19" />
+        <global-instance type="Audio" uid="61">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="AJAX" uid="84" />
+    </global-instances>
+    <sounds-folder>
+        <file name="eq.m4a" />
+        <file name="eq.ogg" />
+        <file name="a_bgm.m4a" />
+        <file name="a_bgm.ogg" />
+        <file name="bc_bgm.m4a" />
+        <file name="bc_bgm.ogg" />
+        <file name="bgm.m4a" />
+        <file name="bgm.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

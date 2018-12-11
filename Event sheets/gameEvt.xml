@@ -1,0 +1,2037 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>gameEvt</name>
+    <events>
+        <variable comment="是否可以拖动工具栏中的建筑，用于出现确定弹窗出现后，不可拖动，直到操作结束" constant="0" name="isDrapBuildItem" sid="510494502947594" static="0" type="text">true</variable>
+        <variable comment="工具栏的当前X坐标" constant="0" name="toolCurrentX" sid="710680017790776" static="0" type="number">0</variable>
+        <variable comment="拖动item更改坐标" constant="0" name="touchingCount" sid="381081555538588" static="0" type="number">0</variable>
+        <variable comment="点击item记录当前坐标" constant="0" name="touchCount" sid="822383561555188" static="0" type="number">0</variable>
+        <variable comment="总分数" constant="0" name="score" sid="232652433433340" static="0" type="number">0</variable>
+        <variable comment="当前占用的土地id" constant="0" name="choseGroundId" sid="384050785520995" static="0" type="number">0</variable>
+        <variable comment="选择的建筑" constant="0" name="choseBuildId" sid="748683156184950" static="0" type="number">0</variable>
+        <variable constant="0" name="boundaryNum" sid="928749065396366" static="0" type="number">10</variable>
+        <variable comment="open可以移动|close关闭移动" constant="0" name="bg_state" sid="647219879780495" static="0" type="text"></variable>
+        <include>fun</include>
+        <event-block sid="494814019615949">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="229941948086196" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="320640037553524" type="Function">
+                    <param id="0" name="Name">&quot;gameIni&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="163348217475464" type="Function">
+                    <param id="0" name="Name">&quot;tipsIni&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="11" name="Go to state" sid="708415066004047" type="FSM">
+                    <param id="0" name="Name">&quot;suggest&quot;</param>
+                </action>
+                <action disabled="1" id="11" name="Go to state" sid="373849085274699" type="FSM">
+                    <param id="0" name="Name">&quot;game&quot;</param>
+                </action>
+                <action id="-33" name="Set layer parallax" sid="528412481157358" type="System">
+                    <param id="0" name="Layer">&quot;tips&quot;</param>
+                    <param id="1" name="Parallax X">100</param>
+                    <param id="2" name="Parallax Y">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="115831169327038">
+            <conditions>
+                <condition id="0" name="On enter" sid="470980961415376" type="FSM">
+                    <param id="0" name="Name">&quot;suggest&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="454043718652034" type="System">
+                    <param id="0" name="Variable">bg_state</param>
+                    <param id="1" name="Value">&quot;close&quot;</param>
+                </action>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="759073134184643" type="jb">
+                    <param id="0" name="X">Self.endX</param>
+                    <param id="1" name="Y">Self.endY</param>
+                </action>
+                <action id="-16" name="Wait" sid="337161677916298" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="5" name="Set frame" sid="390971221634868" type="tipsdb">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="351767922225178" type="tipsdb">
+                    <param id="0" name="X">250</param>
+                    <param id="1" name="Y">jb.Y-jb.Height/2-tipsdb.Height/2</param>
+                </action>
+                <action behavior="Typing" id="3" name="Type text" sid="380384852217113" type="jbTxt">
+                    <param id="0" name="Text">&quot;       拖动建筑到相应位置，规划您的韧性城市。&quot;&amp;newline&amp;&quot;1. 城市规划中应尽可能包含医院、学校、商场、居民区、工厂、加油站等重要的生活和生产设施。&quot;&amp;newline&amp;&quot;2.在容易发生山体滑坡、海水倒灌和城市活断层等高风险区，应注意做好防范措施。&quot;</param>
+                    <param id="1" name="Speed">0.08</param>
+                </action>
+                <action id="-16" name="Wait" sid="659480604506616" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="-3" name="Set position" sid="801241610188436" type="tipsSs">
+                    <param id="0" name="X">320</param>
+                    <param id="1" name="Y">tooldb.Y+20</param>
+                </action>
+                <action id="-16" name="Wait" sid="435362862428275" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Set position" sid="698331670993678" type="tipsJt">
+                    <param id="0" name="X">320+Self.Width</param>
+                    <param id="1" name="Y">tooldb.Y</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="159350723958392" type="tipsJt" />
+                <action id="-16" name="Wait" sid="611392627152591" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="11" name="Go to state" sid="323095789500616" type="FSM">
+                    <param id="0" name="Name">&quot;game&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="371083131745731" type="System">
+                    <param id="0" name="Variable">bg_state</param>
+                    <param id="1" name="Value">&quot;open&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="499388688903536">
+            <conditions>
+                <condition id="0" name="On enter" sid="813675452294985" type="FSM">
+                    <param id="0" name="Name">&quot;game&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="910734163456270" type="Function">
+                    <param id="0" name="Name">&quot;tipsIni&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-15" name="Set visible" sid="140351276647438" type="finishbtn">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="889357742865599" type="updownbtn">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="714509921335863">
+            <conditions>
+                <condition id="7" name="Compare current state" sid="806582527883040" type="FSM">
+                    <param id="0" name="Name">&quot;game&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="520468862834990">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="965886240109578" type="System">
+                            <param id="0" name="Variable">isDrapBuildItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;true&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="120869577723677">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="543963873626285" type="TouchWrap">
+                                    <param id="0" name="Object">buildbtn</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="778151341658499" type="System">
+                                    <param id="0" name="Variable">touchCount</param>
+                                    <param id="1" name="Value">floor(TouchWrap.Y)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="863437782205838">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="101270827930881" type="TouchWrap">
+                                    <param id="0" name="Object">buildbtn</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="587116857057550" type="System">
+                                    <param id="0" name="Variable">touchingCount</param>
+                                    <param id="1" name="Value">floor(TouchWrap.Y)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="821729744756048">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="323990528379371" type="System">
+                                            <param id="0" name="First value">touchCount-touchingCount</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="599672566507733">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="840014891132266" type="buildbtn">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;yes&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="351027635250262" type="buildbtn">
+                                                    <param id="0" name="Object">builditem</param>
+                                                    <param id="1" name="Layer">&quot;build&quot;</param>
+                                                    <param id="2" name="Image point">&quot;span&quot;</param>
+                                                </action>
+                                                <action id="9" name="Set scale" sid="850466711429155" type="builditem">
+                                                    <param id="0" name="Scale">0.7</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="486929424870783" type="builditem">
+                                                    <param id="0" name="Animation">&quot;b&quot;&amp;buildbtn.id</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="160893516822316" type="builditem">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="741171907188661" type="builditem">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Value">buildbtn.id</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="890756663162614" type="builditem">
+                                                    <param id="0" name="Instance variable">name</param>
+                                                    <param id="1" name="Value">buildbtn.name</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="756423820502057" type="builditem">
+                                                    <param id="0" name="Instance variable">score</param>
+                                                    <param id="1" name="Value">buildbtn.score</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="882037453078866" type="System">
+                                                    <param id="0" name="Variable">touchCount</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="782584074092801" type="System">
+                                                    <param id="0" name="Variable">touchingCount</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="409057285271218">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="522423728849024" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="605087629946529" type="buildbtn">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="968646094296427" type="Function">
+                                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;不能重复建造&quot;&amp;buildbtn.name</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="589479205834540" type="System">
+                                                    <param id="0" name="Variable">bg_state</param>
+                                                    <param id="1" name="Value">&quot;unavailable&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="786112227135738">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="912394801347030" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="494599652461322" type="builditem">
+                                    <param id="0" name="Instance variable">build</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="132250901359135" type="builditem">
+                                    <param id="0" name="X">TouchWrap.X</param>
+                                    <param id="1" name="Y">TouchWrap.Y</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="172164620120987" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;close&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="884933208003323" type="Function">
+                                    <param id="0" name="Name">&quot;btndb&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;hidden&quot;</param>
+                                </action>
+                                <action behavior="DragDrop" id="0" name="Set enabled" sid="789277496562768" type="tooldb">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>spawn</comment>
+                <event-block disabled="1" sid="334618802689267">
+                    <conditions>
+                        <condition id="16" name="On hold over object" sid="426956665700671" type="TouchWrap">
+                            <param id="0" name="Object">buildbtn</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="777678363596591">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="708275549215690" type="buildbtn">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;yes&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="318291165893732" type="buildbtn">
+                                    <param id="0" name="Object">builditem</param>
+                                    <param id="1" name="Layer">&quot;build&quot;</param>
+                                    <param id="2" name="Image point">&quot;span&quot;</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="478884791143206" type="builditem">
+                                    <param id="0" name="Scale">0.7</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="254468928261360" type="builditem">
+                                    <param id="0" name="Animation">&quot;b&quot;&amp;buildbtn.id</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="588535745151171" type="builditem">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="523436553176977" type="builditem">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">buildbtn.id</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="577991735700124" type="builditem">
+                                    <param id="0" name="Instance variable">name</param>
+                                    <param id="1" name="Value">buildbtn.name</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="858339087500509" type="builditem">
+                                    <param id="0" name="Instance variable">score</param>
+                                    <param id="1" name="Value">buildbtn.score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="234996636373838">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="730928046335550" type="buildbtn">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="934680211431825" type="Function">
+                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;不能重复建造&quot;&amp;buildbtn.name</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>drop item</comment>
+                <event-block disabled="1" sid="289856979057717">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="741048132399425" type="TouchWrap">
+                            <param id="0" name="Object">builditem</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="884308255282106" type="builditem">
+                            <param id="0" name="Instance variable">build</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;no&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="410820073574277" type="builditem">
+                            <param id="0" name="X">TouchWrap.X</param>
+                            <param id="1" name="Y">TouchWrap.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="422588132812423" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Value">&quot;close&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="716551533142039" type="Function">
+                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;hidden&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>ctrl bg scorll</comment>
+                <event-block sid="843257273841348">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="641861004406615" type="TouchWrap">
+                            <param id="0" name="Object">tooldb</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="641022224316830" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;unavailable&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="787421199107123" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Value">&quot;close&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="283695631777214">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="230568019321454" type="TouchWrap">
+                            <param id="0" name="Object">tooldb</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="856777356760650" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Value">&quot;open&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="520868042741157">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="164507539495364" type="TouchWrap">
+                            <param id="0" name="Object">bg</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="799915794256363" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Value">&quot;open&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>building on ground</comment>
+                <event-block sid="192964853665149">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="246271487614888" type="TouchWrap">
+                            <param id="0" name="Object">tooldb</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="852465123893494">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="292451924522630" type="TouchWrap" />
+                        <condition id="-14" name="Compare variable" sid="853441782387120" type="System">
+                            <param id="0" name="Variable">isDrapBuildItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;true&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="DragDrop" id="0" name="Set enabled" sid="159209573597150" type="tooldb">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="800995681040686">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="815968932007661" type="ground">
+                                    <param id="0" name="Object">builditem</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="624627300172738" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;yes&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="471075784521597" type="builditem">
+                                    <param id="0" name="Instance variable">build</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>普通建筑</comment>
+                                <event-block sid="419704445288629">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="689417559045118" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">28</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="102696215667734" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">29</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="426850555297213" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">30</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="263156043090713" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">31</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="243685015831224" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="467315654670533" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">6</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="294321969102790" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">7</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="492506615867167" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="223577380018512" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="464015432697127" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">24</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="747680153602611" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="581560174231167" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="549761435211705" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="762483545671625" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="384536525463518" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="879776040669678" type="builditem">
+                                            <param id="0" name="Pin to">bg</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="742516414955345" type="System">
+                                            <param id="0" name="Variable">bg_state</param>
+                                            <param id="1" name="Value">&quot;open&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>防护建筑（防固坡）</comment>
+                                <event-block sid="602915941466971">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="303722124048108" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="340428722842074" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">28</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="316761918706016" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="863263833965506" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="189165068485931" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="833514283969414" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="819158040264515" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="714120463201427" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>防护建筑（防护坡）</comment>
+                                <event-block sid="384454995228954">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="710786903342741" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="323830453426407" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">29</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="535900921545920" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="459229206194589" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="306751553527658" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="179055642599075" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="372850690766940" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="496790287093294" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>防护建筑（挡水墙）</comment>
+                                <event-block sid="648272362911018">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="921490141360120" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="944355767924430" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">30</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="413621742459522" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="905039767712964" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="806352068129494" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="970474377356946" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="109249078565766" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="734943069575522" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>防护建筑（堤坝）</comment>
+                                <event-block sid="580831459753309">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="632445617330473" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="811695971933701" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">31</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="245399076631485" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="699573107149406" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="220143792680531" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="204432864935898" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="793816976003458" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="426061894109790" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>防护建筑（地震防护牌）</comment>
+                                <event-block sid="995562549184832">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="804046168004335" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="200454964171359" type="ground">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="565029212716728" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">24</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="294894931210287" type="builditem">
+                                            <param id="0" name="Instance variable">build</param>
+                                            <param id="1" name="Value">&quot;yes&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="724957222059714" type="builditem">
+                                            <param id="0" name="X">ground.X</param>
+                                            <param id="1" name="Y">ground.Y-15</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="406901097683144" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="865161068909627" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="356203419759402" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="302776524740683" type="duanceng">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="865896712115989">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="744910027704471" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="484175296818041" type="builditem" />
+                                        <action id="-9" name="Set value" sid="209003384355062" type="System">
+                                            <param id="0" name="Variable">bg_state</param>
+                                            <param id="1" name="Value">&quot;open&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="235211175353695">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="881382178053381" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="797285924140875" type="builditem">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">24</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="932224106602304" type="Function">
+                                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;此处是断层，只能放地震断层避让牌&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="795511143737173">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="711818763110293" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="693321167862441" type="Function">
+                                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;不能建在此处&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="707248757557437">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="565636228112017" type="tooldb">
+                                    <param id="0" name="Object">builditem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="122138277163136" type="builditem" />
+                                <action id="-9" name="Set value" sid="698695619490642" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="141426316076301">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="319414267909970" type="builditem">
+                                    <param id="0" name="Object">ground</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="383180758922345" type="builditem" />
+                                <action id="0" name="Call function" sid="572722635235417" type="Function">
+                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;请建造在地基中&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="884836590588886" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="846859341961266">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="860793759247199" type="builditem">
+                                    <param id="0" name="Object">ground</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="514841732693608" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="782525414593329" type="builditem">
+                                    <param id="0" name="Instance variable">build</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="169669166509154" type="builditem" />
+                                <action id="0" name="Call function" sid="694487455686257" type="Function">
+                                    <param id="0" name="Name">&quot;tips&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;此地基已经被占用&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="308428624707246" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="798629671588507">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="573059116279766" type="TouchWrap">
+                                    <param id="0" name="Object">tooldb</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="165003494354191" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="462232385540386">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="423643254244195" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;unavailable&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="792132444197781" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="444828670005318">
+                    <conditions>
+                        <condition behavior="DragDrop" id="2" name="On drop" sid="915300086344262" type="tooldb" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="548482050484490" type="System">
+                            <param id="0" name="Variable">toolCurrentX</param>
+                            <param id="1" name="Value">tooldb.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>具有点击相应时间的tap事件</comment>
+                <event-block sid="179771376697157">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="473591330547510" type="TouchWrap" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>up and down btn</comment>
+                        <event-block sid="564766637325365">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="744782783917698" type="TouchWrap">
+                                    <param id="0" name="Object">updownbtn</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="647172937061155">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="939017221283817" type="updownbtn">
+                                            <param id="0" name="Instance variable">updown</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="630879835866378" type="updownbtn">
+                                            <param id="0" name="Instance variable">updown</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="454926917685411" type="tooldb">
+                                            <param id="0" name="X">9999</param>
+                                            <param id="1" name="Y">Self.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="953472188196624" type="updownbtn">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="297689512933074">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="552458677301080" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="456771938576223" type="updownbtn">
+                                            <param id="0" name="Instance variable">updown</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="765320706718976" type="tooldb">
+                                            <param id="0" name="X">toolCurrentX</param>
+                                            <param id="1" name="Y">Self.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="194128919104318" type="updownbtn">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>builds chose</comment>
+                        <event-block sid="307496256746254">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="787728432736326" type="TouchWrap">
+                                    <param id="0" name="Object">builditem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-9" name="Set value" sid="584177396023949" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;close&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="159181237346887">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="789235528909990" type="builditem">
+                                            <param id="0" name="Object">ground</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="908231056297953" type="System">
+                                            <param id="0" name="Variable">choseBuildId</param>
+                                            <param id="1" name="Value">builditem.id</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="361996725986287" type="System">
+                                            <param id="0" name="Variable">choseGroundId</param>
+                                            <param id="1" name="Value">ground.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="733762936305768" type="Function">
+                                            <param id="0" name="Name">&quot;btndb&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;show&quot;{###}builditem.X{###}builditem.Y-builditem.Height/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>finish</comment>
+                        <event-block sid="419742434040427">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="331457208801510" type="TouchWrap">
+                                    <param id="0" name="Object">finishbtn</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="308147535071279" type="Function">
+                                    <param id="0" name="Name">&quot;shake&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="811691842801812" type="Function">
+                                    <param id="0" name="Name">&quot;countScore&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="478798129017333" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="11" name="Go to state" sid="640604487851179" type="FSM">
+                                    <param id="0" name="Name">&quot;result&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>cancel btn</comment>
+                <event-block sid="488414707217323">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="593119377835156" type="TouchWrap">
+                            <param id="0" name="Object">cancelbtn</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="615553146673792">
+                            <conditions>
+                                <condition disabled="1" id="-7" name="Compare instance variable" sid="172456496180062" type="builditem">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseBuildId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="376815776910881" type="builditem" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="789359448628271">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="265686922025511" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseGroundId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="248891031135591" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;yes&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="680044031998475" type="ground">
+                                    <param id="0" name="Instance variable">score</param>
+                                    <param id="1" name="Value">999</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="963409634670750">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="558111663348973" type="ground">
+                                            <param id="0" name="Object">builditem</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="368419609462755" type="builditem" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="495967178686800">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="711598721028711" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseBuildId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="727813745484630" type="buildbtn">
+                                    <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="897075974457615" type="buildbtn">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;yes&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="751622002166367">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="161074606174541" type="Function">
+                                    <param id="0" name="Name">&quot;btndb&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;hidden&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="365688381438659" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>sure btn</comment>
+                <event-block sid="345108390454144">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="529216695124003" type="TouchWrap">
+                            <param id="0" name="Object">surebtn</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="126285736271524">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="130749800091415" type="builditem">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseBuildId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="283777297825472" type="builditem">
+                                    <param id="0" name="Instance variable">build</param>
+                                    <param id="1" name="Value">&quot;yes&quot;</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="687419258663897" type="builditem">
+                                    <param id="0" name="Layer">&quot;bg&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="400898872829663" type="builditem">
+                                    <param id="0" name="Pin to">bg</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="847569202185335">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="585628006420398" type="builditem">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Move to layer" sid="370861449572466" type="builditem">
+                                            <param id="0" name="Layer">&quot;hightBuild&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>控制哪些建筑是可以多次建造</comment>
+                        <event-block sid="415834813562706">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="373677382768246" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseBuildId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="255889461990083" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="750943385415006" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="634400877935085" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="372657217572735" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="463086160855329" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">14</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="468050477626086" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">21</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="805384974084939" type="buildbtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">23</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="940123772321778" type="buildbtn">
+                                    <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="783712390537038" type="buildbtn">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;no&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="918351755021177">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="805037360304502" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">choseGroundId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="726313349914520" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;no&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="307811393901538" type="ground">
+                                    <param id="0" name="Instance variable">score</param>
+                                    <param id="1" name="Value">choseBuildId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="308516034230220">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="203952044850879" type="Function">
+                                    <param id="0" name="Name">&quot;btndb&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;hidden&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="517181827448437" type="System">
+                                    <param id="0" name="Variable">bg_state</param>
+                                    <param id="1" name="Value">&quot;open&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>结束逻辑</comment>
+        <event-block sid="510063186700046">
+            <conditions>
+                <condition id="0" name="On enter" sid="457265289816958" type="FSM">
+                    <param id="0" name="Name">&quot;result&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="306225427850438" type="Function">
+                    <param id="0" name="Name">&quot;level&quot;</param>
+                    <param id="1" name="Parameter {n}">score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="212118001750815">
+            <conditions>
+                <condition id="0" name="On completed" sid="768035176796889" type="AJAX">
+                    <param id="0" name="Tag">&quot;postdata&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="514874533521655" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-3" name="Set position" sid="387505101798275" type="level">
+                    <param id="0" name="X">-1106</param>
+                    <param id="1" name="Y">-223</param>
+                </action>
+                <action id="-9" name="Set value" sid="817971803361103" type="System">
+                    <param id="0" name="Variable">bg_state</param>
+                    <param id="1" name="Value">&quot;close&quot;</param>
+                </action>
+                <action behavior="MoveTo" id="4" name="Move to XY" sid="827446258714597" type="jb">
+                    <param id="0" name="X">Self.endX+40</param>
+                    <param id="1" name="Y">Self.endY</param>
+                </action>
+                <action id="-16" name="Wait" sid="571471082037747" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="5" name="Set frame" sid="459447105523406" type="tipsdb">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+                <action id="-3" name="Set position" sid="782740708698908" type="tipsdb">
+                    <param id="0" name="X">250+40</param>
+                    <param id="1" name="Y">jb.Y-jb.Height/2-tipsdb.Height/2</param>
+                </action>
+                <action behavior="Typing" id="3" name="Type text" sid="513313563742383" type="jbTxt">
+                    <param id="0" name="Text">&quot;一个好的韧性城市系统能够消化、吸收和抵御外界冲击，并保持原有主要特征、结构和关键功能不受明显影响，所以在规划韧性城市时要修建有基础生命线工程（医院、学校、商场）。山体下不要建医院、学校、商场&quot;</param>
+                    <param id="1" name="Speed">0.08</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="721251690677229" type="System">
+                    <param id="0" name="Seconds">8</param>
+                </action>
+                <action id="-16" name="Wait" sid="136878048912237" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="5" name="Set frame" sid="891573330937920" type="tipsdb">
+                    <param id="0" name="Frame number">3</param>
+                </action>
+                <action behavior="Typing" id="3" name="Type text" sid="340928277795394" type="jbTxt">
+                    <param id="0" name="Text">&quot;和居民楼这类建筑，沿海要修建大坝防止海啸，沿河岸修建防水墙防止水灾，山脊间修建防固坡防止山体崩塌，土质疏松的山坡应修建防护坡固土固坡防止山体滑坡，修建监测站以便监测预警突发灾害。&quot;</param>
+                    <param id="1" name="Speed">0.08</param>
+                </action>
+                <action id="-16" name="Wait" sid="854765976644022" type="System">
+                    <param id="0" name="Seconds">8</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="923443690672157" type="System">
+                    <param id="0" name="Layout">end</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="736942909588342" title="fsm">
+            <sub-events>
+                <event-block sid="424375097753688">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="295952766624661" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;open&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="DraggingVetctor" id="0" name="Set activated" sid="431292428419455" type="cam">
+                            <param id="0" name="Activated">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="183053599337183">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="318077782706254" type="System">
+                            <param id="0" name="Variable">bg_state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;close&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="DraggingVetctor" id="0" name="Set activated" sid="274144472316625" type="cam">
+                            <param id="0" name="Activated">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="灾难动画" sid="491434386413369" title="animation">
+            <sub-events>
+                <comment>地震+灾害</comment>
+                <event-block sid="321334301886324">
+                    <conditions>
+                        <condition id="0" name="On function" sid="785910664093925" type="Function">
+                            <param id="0" name="Name">&quot;shake&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="106545432092683" type="System">
+                            <param id="0" name="Layer">&quot;tool&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="386604612484321" type="finishbtn">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="939562837260063" type="updownbtn">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="880258048723526" type="System">
+                            <param id="0" name="Layer">&quot;anim&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="400" name="Shake camera" sid="109621922357528" type="MagiCam">
+                            <param id="0" name="Name">&quot;shake&quot;</param>
+                            <param id="1" name="Strength">30</param>
+                            <param id="2" name="Max deviation">30</param>
+                            <param id="3" name="Max zoom deviation">0.25</param>
+                            <param id="4" name="Build length">1</param>
+                            <param id="5" name="Drop time">1</param>
+                            <param id="6" name="Duration">5</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="142295524468375" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">&quot;eq&quot;</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">1</param>
+                            <param id="2" name="Tag (optional)">&quot;eq&quot;</param>
+                        </action>
+                        <action disabled="1" id="6" name="Set speed" sid="475534842548599" type="anim">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="675211311900338" type="zn7" />
+                        <action id="-16" name="Wait" sid="905014427745293" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="210974653576097" type="builditem">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>防固坡</comment>
+                        <event-block sid="483963717576197">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="275156323331636" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">28</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="253802123800648" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="564400772390853" type="zn3">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="101089341344791">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="299693721986513" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="928241112646011" type="zn3">
+                                    <param id="0" name="Speed">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>防护坡</comment>
+                        <event-block sid="269582162925351">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="299796240900159" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">29</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="503933385724214" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="622434182734694" type="zn2">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="169281548032043">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="210017705326123" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="479098429276716" type="zn2">
+                                    <param id="0" name="Speed">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>挡水墙</comment>
+                        <event-block sid="653582322891049">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="160490048507549" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="519472838892379" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="931037720506415" type="zn1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="214514671035951">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="165501356117129" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="969384086824054" type="zn1">
+                                    <param id="0" name="Speed">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>堤坝</comment>
+                        <event-block sid="231615685845760">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="932745969297405" type="ground">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">31</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="769500812318656" type="ground">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;no&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="975084242710221" type="zn5">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="773318455505851">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="504513311349714" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="999460277199083" type="zn5">
+                                    <param id="0" name="Speed">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>打雷</comment>
+                <event-block disabled="1" sid="396887664143356">
+                    <conditions>
+                        <condition id="0" name="On function" sid="466040403463179" type="Function">
+                            <param id="0" name="Name">&quot;disaster&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="515336160543921" type="System">
+                            <param id="0" name="Object to create">sky</param>
+                            <param id="1" name="Layer">&quot;anim&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="997791388097802" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="725650932504729" type="System">
+                            <param id="0" name="Object to create">thunder</param>
+                            <param id="1" name="Layer">&quot;anim&quot;</param>
+                            <param id="2" name="X">193</param>
+                            <param id="3" name="Y">250</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="442641254780255" type="thunder">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="761746719634152" type="System">
+                            <param id="0" name="Object to create">thunder</param>
+                            <param id="1" name="Layer">&quot;anim&quot;</param>
+                            <param id="2" name="X">515</param>
+                            <param id="3" name="Y">152</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="272929677604150" type="thunder">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="548578209691791" type="thunder">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="969273193125520" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="882002852125145" type="sky" />
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="612220281612022">
+                    <conditions>
+                        <condition behavior="Flash" id="1" name="On flash ended" sid="619306995948955" type="thunder" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="996280025074194" type="thunder" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="评分" sid="411745896321107" title="level">
+            <sub-events>
+                <comment>level</comment>
+                <event-block sid="532444972072676">
+                    <conditions>
+                        <condition id="0" name="On function" sid="798427321163996" type="Function">
+                            <param id="0" name="Name">&quot;level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-33" name="Set layer parallax" sid="391924042034015" type="System">
+                            <param id="0" name="Layer">&quot;tips&quot;</param>
+                            <param id="1" name="Parallax X">0</param>
+                            <param id="2" name="Parallax Y">100</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="350008110636042" type="level">
+                            <param id="0" name="X">320</param>
+                            <param id="1" name="Y">350</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="339896414870595" type="level">
+                            <param id="0" name="Width">89</param>
+                            <param id="1" name="Height">101</param>
+                        </action>
+                        <action behavior="EaseTween" id="10" name="Start" sid="809636029619063" type="level" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="431835542432948">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="160999373165053" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">80</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="824479737003133" type="level">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="609272866350599" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;a_bgm&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;a_bgm&quot;</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="102294282263074" type="AJAX">
+                                    <param id="0" name="Tag">&quot;postdata&quot;</param>
+                                    <param id="1" name="URL">serverUrl</param>
+                                    <param id="2" name="Data">&quot;openid=&quot;&amp;tokenat(userData,0,&quot;|&quot;)&amp;&quot;&amp;nickName=&quot;&amp;tokenat(userData,1,&quot;|&quot;)&amp;&quot;&amp;headimgurl=&quot;&amp;tokenat(userData,2,&quot;|&quot;)&amp;&quot;&amp;score=&quot;&amp;score&amp;&quot;&amp;level=0&quot;</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="649602348764945">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="883655132897901" type="System" />
+                                <condition id="1" name="Compare parameter" sid="601542197691527" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">50</param>
+                                </condition>
+                                <condition id="1" name="Compare parameter" sid="879522688337521" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">80</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="296715372559570" type="level">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="780957426236630" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;bc_bgm&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;a_bgm&quot;</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="421176824016746" type="AJAX">
+                                    <param id="0" name="Tag">&quot;postdata&quot;</param>
+                                    <param id="1" name="URL">serverUrl</param>
+                                    <param id="2" name="Data">&quot;openid=&quot;&amp;tokenat(userData,0,&quot;|&quot;)&amp;&quot;&amp;nickName=&quot;&amp;tokenat(userData,1,&quot;|&quot;)&amp;&quot;&amp;headimgurl=&quot;&amp;tokenat(userData,2,&quot;|&quot;)&amp;&quot;&amp;score=&quot;&amp;score&amp;&quot;&amp;level=1&quot;</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325270094457331">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="925510352150031" type="System" />
+                                <condition id="1" name="Compare parameter" sid="416522398133958" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="180251720911526" type="level">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="394215033431275" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;bc_bgm&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;a_bgm&quot;</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="594006328145772" type="AJAX">
+                                    <param id="0" name="Tag">&quot;postdata&quot;</param>
+                                    <param id="1" name="URL">serverUrl</param>
+                                    <param id="2" name="Data">&quot;openid=&quot;&amp;tokenat(userData,0,&quot;|&quot;)&amp;&quot;&amp;nickName=&quot;&amp;tokenat(userData,1,&quot;|&quot;)&amp;&quot;&amp;headimgurl=&quot;&amp;tokenat(userData,2,&quot;|&quot;)&amp;&quot;&amp;score=&quot;&amp;score&amp;&quot;&amp;level=2&quot;</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>total score</comment>
+                <event-block sid="629443469521752">
+                    <conditions>
+                        <condition id="0" name="On function" sid="166624280081679" type="Function">
+                            <param id="0" name="Name">&quot;countScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="858438991803177">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="893182067922633" type="System">
+                                    <param id="0" name="Object">ground</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="917036462168718">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="535999988224042" type="ground">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;no&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>土地外围：0,1,2,3,8,11,16,21,26,27 </comment>
+                                        <event-block any="1" sid="874267662686649">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="903921216333846" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="979305762271621" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="334902397073407" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="576627637103419" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="320951765336562" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">8</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="913156943302803" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">11</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="864437061386863" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">16</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="393428049550956" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">21</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="733389777929804" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">26</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="313456707245781" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">27</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="654633585968607">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="377545315002956" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">12</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="161614348412014" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">9</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="904918955130662" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="765222905128087">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="937817646879286" type="System" />
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block any="1" sid="494027707201833">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="277506877656757" type="ground">
+                                                                    <param id="0" name="Instance variable">score</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">18</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="117234171893124" type="ground">
+                                                                    <param id="0" name="Instance variable">score</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="420847998300131" type="ground">
+                                                                    <param id="0" name="Instance variable">score</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">16</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="239899328507209" type="ground">
+                                                                    <param id="0" name="Instance variable">score</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">17</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Add to" sid="763333928124846" type="System">
+                                                                    <param id="0" name="Variable">score</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>防护建筑（防固坡）</comment>
+                                        <event-block sid="588052379414335">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="807692875723654" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="264244954175757" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">28</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="624245277992505" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Value">15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>防护建筑（防护坡）</comment>
+                                        <event-block sid="679924921925004">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="101984962268333" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="855067388989998" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">29</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="974504635189964" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Value">10</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>防护建筑（挡水墙）</comment>
+                                        <event-block sid="531404641482087">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="436040059044854" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="942337094086381" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">30</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="963330992282357" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Value">10</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>防护建筑（堤坝）</comment>
+                                        <event-block sid="211680736611705">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="473479222850614" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="725823496907905" type="ground">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">31</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="232522197970321" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Value">15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="475900848066009">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="566029822810266" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>医院</comment>
+                                                <event-block sid="726679847673522">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="428640278144605" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">19</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="234811552163304" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>监测站</comment>
+                                                <event-block sid="481705415146130">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="719905456616494" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="959946903837512" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">12</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="541206273826569" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">10</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>学校</comment>
+                                                <event-block sid="352566756381119">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="516609015356215" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="950613836183223" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">18</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="558823711493668" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>商场</comment>
+                                                <event-block sid="128424798336192">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="110891150642036" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="906128031366284" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="416010227751979" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>商业区1</comment>
+                                                <event-block sid="553263199166220">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="388499004312108" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="474780575550958" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">16</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="311293816506031" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>商业区2</comment>
+                                                <event-block sid="145903852488058">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="235920778382155" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="577438210489415" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">17</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="520297411146198" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>居民楼</comment>
+                                                <event-block sid="242633263805846">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="489095159374804" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="861181370276499" type="ground">
+                                                            <param id="0" name="Instance variable">score</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">21</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="769883520058432" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="521925576939628">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="451291882927282" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="144490638149137" type="System">
+                                                            <param id="0" name="Variable">score</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="319009613258382">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="267711480421104" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="330792981863603" type="debug">
+                    <param id="0" name="Text">level.X&amp;newline&amp;level.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
