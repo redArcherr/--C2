@@ -58,7 +58,7 @@
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Scale inner</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Nothing (not recommended)</prop>
         <prop name="Orientations">Any</prop>
@@ -1643,26 +1643,26 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="20" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471742348641474" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" />
                 </animation>
             </animation-folder>
         </object-type>

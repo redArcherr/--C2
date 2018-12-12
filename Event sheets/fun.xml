@@ -20,6 +20,9 @@
                 <event-block sid="304945540988127">
                     <conditions />
                     <actions>
+                        <action id="-15" name="Set visible" sid="117309668947499" type="jbTxt">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
                         <action id="-9" name="Set value" sid="322002048615808" type="System">
                             <param id="0" name="Variable">isDrapBuildItem</param>
                             <param id="1" name="Value">&quot;true&quot;</param>
