@@ -378,7 +378,7 @@
                         </action>
                         <action id="0" name="Add key" sid="666651932883691" type="Dictionary">
                             <param id="0" name="Key">&quot;i12&quot;</param>
-                            <param id="1" name="Value">&quot;监测局|12&quot;</param>
+                            <param id="1" name="Value">&quot;监测站台|12&quot;</param>
                         </action>
                         <action id="0" name="Add key" sid="114392457398280" type="Dictionary">
                             <param id="0" name="Key">&quot;i13&quot;</param>
@@ -422,7 +422,7 @@
                         </action>
                         <action id="0" name="Add key" sid="634061397241726" type="Dictionary">
                             <param id="0" name="Key">&quot;i23&quot;</param>
-                            <param id="1" name="Value">&quot;经抗震加固的老旧房屋|23&quot;</param>
+                            <param id="1" name="Value">&quot;抗震加固老旧房屋|23&quot;</param>
                         </action>
                         <action id="0" name="Add key" sid="511549251780415" type="Dictionary">
                             <param id="0" name="Key">&quot;i24&quot;</param>
