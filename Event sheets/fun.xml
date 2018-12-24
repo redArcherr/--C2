@@ -93,6 +93,10 @@
                         <action id="-15" name="Set visible" sid="330461346759053" type="duanceng">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="-3" name="Set position" sid="672833474702974" type="overbtn">
+                            <param id="0" name="X">123</param>
+                            <param id="1" name="Y">-473</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>创建ui</comment>
@@ -354,7 +358,7 @@
                         </action>
                         <action id="0" name="Add key" sid="584314124372875" type="Dictionary">
                             <param id="0" name="Key">&quot;i6&quot;</param>
-                            <param id="1" name="Value">&quot;挡水墙|6&quot;</param>
+                            <param id="1" name="Value">&quot;河堤|6&quot;</param>
                         </action>
                         <action id="0" name="Add key" sid="761435834946962" type="Dictionary">
                             <param id="0" name="Key">&quot;i7&quot;</param>
@@ -378,7 +382,7 @@
                         </action>
                         <action id="0" name="Add key" sid="666651932883691" type="Dictionary">
                             <param id="0" name="Key">&quot;i12&quot;</param>
-                            <param id="1" name="Value">&quot;监测站台|12&quot;</param>
+                            <param id="1" name="Value">&quot;监测台站|12&quot;</param>
                         </action>
                         <action id="0" name="Add key" sid="114392457398280" type="Dictionary">
                             <param id="0" name="Key">&quot;i13&quot;</param>

@@ -1278,14 +1278,30 @@
                 <action id="5" name="Set frame" sid="891573330937920" type="tipsdb">
                     <param id="0" name="Frame number">3</param>
                 </action>
+                <action id="-3" name="Set position" sid="195375262426392" type="overbtn">
+                    <param id="0" name="X">jb.X+120</param>
+                    <param id="1" name="Y">jb.Y-100</param>
+                </action>
                 <action behavior="Typing" id="3" name="Type text" sid="340928277795394" type="jbTxt">
                     <param id="0" name="Text">&quot;和居民楼这类建筑，沿海要修建大坝防止海啸，沿河岸修建防水墙防止水灾，山脊间修建防固坡防止山体崩塌，土质疏松的山坡应修建防护坡固土固坡防止山体滑坡，修建监测站以便监测预警突发灾害。&quot;</param>
                     <param id="1" name="Speed">0.08</param>
                 </action>
-                <action id="-16" name="Wait" sid="854765976644022" type="System">
+                <action disabled="1" id="-16" name="Wait" sid="854765976644022" type="System">
                     <param id="0" name="Seconds">8</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="923443690672157" type="System">
+                <action disabled="1" id="-2" name="Go to layout" sid="923443690672157" type="System">
+                    <param id="0" name="Layout">end</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="371781557719417">
+            <conditions>
+                <condition id="17" name="On tap object" sid="195099892595968" type="TouchWrap">
+                    <param id="0" name="Object">overbtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="465492287762600" type="System">
                     <param id="0" name="Layout">end</param>
                 </action>
             </actions>
